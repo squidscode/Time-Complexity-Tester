@@ -1,0 +1,240 @@
+Scale: 2.87725
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(sqrt(n))             NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 5.35
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 3.18
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(2^n)                 NO -- EXPECTED O(n^n)
+
+Scale: 9.2
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(2^n)                 OK                  
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 2.92
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(1)                   NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 3.87
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(sqrt(n))             NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.82
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 2.15
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(sqrt(n))             NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(1.5^n)               NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(2^n)                 NO -- EXPECTED O(n^n)
+
+Scale: 2.46
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(1.5^n)               NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 2.92
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(1)                   NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.4
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 7.66
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(2^n)                 OK                  
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.88
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 8.06
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(2^n)                 OK                  
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.89
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.84
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 2.3
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(sqrt(n))             NO -- EXPECTED O(log n)
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(1.5^n)               NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 1.55
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(1.5^n)               NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 4.46
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(1.5^n)               OK                  
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+
+Scale: 3.56
+[5.000s] Constant                       Guess: O(1)                   OK                  
+[5.000s] Log                            Guess: O(log n)               OK                  
+[5.000s] Sqrt                           Guess: O(sqrt(n))             OK                  
+[5.000s] Linear                         Guess: O(n)                   OK                  
+[5.000s] Linearxlog                     Guess: O(n log n)             OK                  
+[5.000s] Quadratic                      Guess: O(n^2)                 OK                  
+[5.000s] Cubic                          Guess: O(2^n)                 NO -- EXPECTED O(n^3)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(1.5^n)
+[5.000s] Exp                            Guess: O(n^2)                 NO -- EXPECTED O(2^n)
+[5.000s] S_Exp                          Guess: O(n^n)                 OK                  
+

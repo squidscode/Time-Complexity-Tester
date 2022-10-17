@@ -1,1 +1,2 @@
-# Time-Complexity-Tester
+# Creating Data Structures using C++ classes
+I will be creating various data structures using C++. I will also be testing the time complexity of said data structures by using a time complexity tester program. 
