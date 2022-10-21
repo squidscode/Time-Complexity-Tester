@@ -1,0 +1,1481 @@
+Scale: 0.25
+Possible Big O functions: 
+  - O(1) : (a = 0.95779, error = 0.00232) 
+  - O(log n) : (a = 0.13460, error = 0.00113) 
+  - O(sqrt(n)) : (a = 0.07134, error = 0.00184) 
+  - O(n) : (a = 0.00851, error = 0.00030) 
+  - O(n log n) : (a = 0.00237, error = 0.00006) 
+  - O(n^2) : (a = 0.00055, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00025, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.258s, n = 472] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.13112, error = 0.00269) 
+  - O(sqrt(n)) : (a = 0.03763, error = 0.00076) 
+  - O(n) : (a = 0.00182, error = 0.00006) 
+  - O(n log n) : (a = 0.00039, error = 0.00001) 
+  - O(n^2) : (a = 0.00005, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00000, error = 0.00000) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.054s, n = 3679] Log                                      Guess: NOT FOUND              NO -- EXPECTED Θ(log n)
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.24846, error = 0.00007) 
+  - O(n) : (a = -0.00045, error = 0.00001) 
+  - O(n log n) : (a = -0.00100, error = 0.00002) 
+  - O(n^2) : (a = -0.00105, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.422s, n = 19] Sqrt                                       Guess: NOT FOUND              NO -- EXPECTED Θ(sqrt(n))
+Possible Big O functions: 
+  - O(n) : (a = 0.24694, error = 0.00010) 
+  - O(n log n) : (a = 0.03208, error = 0.00006) 
+  - O(n^2) : (a = -0.00244, error = 0.00007) 
+  - O(n^3) : (a = -0.00266, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00266, error = 0.00007) 
+  - O(2^n) : (a = -0.00266, error = 0.00007) 
+  - O(n^n) : (a = -0.00266, error = 0.00007) 
+[5.236s, n = 12] Linear                                     Guess: NOT FOUND              NO -- EXPECTED Θ(n)
+Possible Big O functions: 
+  - O(n) : (a = 1.48896, error = 0.00510) 
+  - O(n log n) : (a = 0.24580, error = 0.00014) 
+  - O(n^2) : (a = 0.00192, error = 0.00007) 
+  - O(n^3) : (a = -0.00333, error = 0.00008) 
+  - O(1.5^n) : (a = -0.00336, error = 0.00008) 
+  - O(2^n) : (a = -0.00336, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.216s, n = 10] Linearxlog                                 Guess: Θ(n)                  NO -- EXPECTED Θ(n log n)
+Possible Big O functions: 
+  - O(n^2) : (a = 0.24157, error = 0.00025) 
+  - O(n^3) : (a = -0.00137, error = 0.00013) 
+  - O(1.5^n) : (a = -0.00358, error = 0.00002) 
+  - O(2^n) : (a = -0.00683, error = 0.00016) 
+  - O(n^n) : (a = -0.00691, error = 0.00016) 
+[5.190s, n = 6] Quadratic                                   Guess: NOT FOUND              NO -- EXPECTED Θ(n^2)
+Possible Big O functions: 
+  - O(n^3) : (a = 0.24213, error = 0.00023) 
+  - O(n^n) : (a = -0.00608, error = 0.00012) 
+[5.121s, n = 6] Cubic                                       Guess: NOT FOUND              NO -- EXPECTED Θ(n^3)
+Possible Big O functions: 
+  - O(log n) : (a = 19.60154, error = 0.00000) 
+  - O(n^3) : (a = 0.03021, error = 0.00045) 
+  - O(1.5^n) : (a = 0.41999, error = 0.00000) 
+  - O(2^n) : (a = 0.00258, error = 0.00000) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.112s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(2^n) : (a = 0.52891, error = 0.00092) 
+  - O(n^n) : (a = 0.00288, error = 0.00008) 
+[5.175s, n = 13] Exp                                        Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.23626, error = 0.00043) 
+[5.168s, n = 5] S_Exp                                       Guess: NOT FOUND              NO -- EXPECTED Θ(n^n)
+
+Scale: 0.5
+Possible Big O functions: 
+  - O(1) : (a = 1.06517, error = 0.00248) 
+  - O(log n) : (a = 0.14420, error = 0.00101) 
+  - O(sqrt(n)) : (a = 0.09307, error = 0.00526) 
+  - O(n) : (a = 0.00919, error = 0.00037) 
+  - O(n log n) : (a = 0.00590, error = 0.00152) 
+  - O(n^2) : (a = 0.00063, error = 0.00003) 
+  - O(n^3) : (a = 0.00010, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00019, error = 0.00001) 
+  - O(2^n) : (a = 0.00012, error = 0.00001) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.262s, n = 469] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.32856, error = 0.00379) 
+  - O(sqrt(n)) : (a = 0.12781, error = 0.00218) 
+  - O(n) : (a = 0.00794, error = 0.00039) 
+  - O(n log n) : (a = 0.00143, error = 0.00002) 
+  - O(n^2) : (a = 0.00016, error = 0.00001) 
+  - O(n^3) : (a = 0.00001, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00004, error = 0.00000) 
+  - O(2^n) : (a = 0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.108s, n = 1639] Log                                      Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.49553, error = 0.00038) 
+  - O(n) : (a = -0.00019, error = 0.00002) 
+  - O(n log n) : (a = -0.00074, error = 0.00001) 
+  - O(n^2) : (a = -0.00105, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.421s, n = 19] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.49607, error = 0.00017) 
+  - O(n log n) : (a = 0.07404, error = 0.00008) 
+  - O(n^2) : (a = -0.00179, error = 0.00006) 
+  - O(n^3) : (a = -0.00266, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00266, error = 0.00007) 
+  - O(2^n) : (a = -0.00266, error = 0.00007) 
+  - O(n^n) : (a = -0.00266, error = 0.00007) 
+[5.236s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n) : (a = 2.77190, error = 0.00859) 
+  - O(n log n) : (a = 0.50025, error = 0.00000) 
+  - O(n^2) : (a = 0.01402, error = 0.00007) 
+  - O(n^3) : (a = -0.00280, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00298, error = 0.00007) 
+  - O(2^n) : (a = -0.00299, error = 0.00007) 
+  - O(n^n) : (a = -0.00299, error = 0.00007) 
+[5.195s, n = 11] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.49122, error = 0.00041) 
+  - O(n^3) : (a = 0.01274, error = 0.00008) 
+  - O(2^n) : (a = -0.00273, error = 0.00002) 
+  - O(n^n) : (a = -0.00450, error = 0.00011) 
+[5.146s, n = 8] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.48859, error = 0.00032) 
+  - O(n^n) : (a = -0.00744, error = 0.00013) 
+[5.141s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.38519, error = 0.00000) 
+  - O(n^3) : (a = 0.06773, error = 0.00133) 
+  - O(1.5^n) : (a = 0.82851, error = 0.00010) 
+  - O(2^n) : (a = 0.00554, error = 0.00000) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.120s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(2^n) : (a = 1.05911, error = 0.00010) 
+  - O(n^n) : (a = -0.01171, error = 0.00020) 
+[5.114s, n = 4] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 82.07087, error = 0.00000) 
+  - O(n^n) : (a = 0.48473, error = 0.00016) 
+[5.104s, n = 3] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 0.75
+Possible Big O functions: 
+  - O(1) : (a = 0.96324, error = 0.00213) 
+  - O(log n) : (a = 0.14797, error = 0.00184) 
+  - O(sqrt(n)) : (a = 0.07468, error = 0.00171) 
+  - O(n) : (a = 0.00861, error = 0.00036) 
+  - O(n log n) : (a = 0.00249, error = 0.00006) 
+  - O(n^2) : (a = 0.00058, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00035, error = 0.00004) 
+  - O(2^n) : (a = 0.00017, error = 0.00001) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.259s, n = 471] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.53348, error = 0.00580) 
+  - O(sqrt(n)) : (a = 0.22289, error = 0.00638) 
+  - O(n) : (a = 0.01419, error = 0.00050) 
+  - O(n log n) : (a = 0.00322, error = 0.00006) 
+  - O(n^2) : (a = 0.00034, error = 0.00001) 
+  - O(n^3) : (a = 0.00003, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00010, error = 0.00001) 
+  - O(2^n) : (a = 0.00003, error = 0.00000) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.166s, n = 1117] Log                                      Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.75104, error = 0.00000) 
+  - O(n) : (a = 0.00058, error = 0.00004) 
+  - O(n log n) : (a = -0.00148, error = 0.00004) 
+  - O(n^2) : (a = -0.00168, error = 0.00004) 
+  - O(n^3) : (a = -0.00168, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00168, error = 0.00004) 
+  - O(2^n) : (a = -0.00168, error = 0.00004) 
+  - O(n^n) : (a = -0.00168, error = 0.00004) 
+[5.441s, n = 18] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.74948, error = 0.00000) 
+  - O(n log n) : (a = 0.11388, error = 0.00012) 
+  - O(n^2) : (a = -0.00186, error = 0.00007) 
+  - O(n^3) : (a = -0.00336, error = 0.00008) 
+  - O(1.5^n) : (a = -0.00336, error = 0.00008) 
+  - O(2^n) : (a = -0.00336, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.301s, n = 10] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 0.73990, error = 0.00062) 
+  - O(n^2) : (a = 0.02444, error = 0.00011) 
+  - O(n^3) : (a = -0.00351, error = 0.00009) 
+  - O(1.5^n) : (a = -0.00384, error = 0.00009) 
+  - O(2^n) : (a = -0.00385, error = 0.00009) 
+  - O(n^n) : (a = -0.00385, error = 0.00009) 
+[5.242s, n = 9] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.73906, error = 0.00048) 
+  - O(n^3) : (a = 0.02239, error = 0.00010) 
+  - O(2^n) : (a = -0.00657, error = 0.00012) 
+  - O(n^n) : (a = -0.00543, error = 0.00013) 
+[5.168s, n = 7] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.74102, error = 0.00011) 
+  - O(n^n) : (a = -0.00821, error = 0.00009) 
+[5.158s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.83146, error = 0.00000) 
+  - O(n^3) : (a = 0.10464, error = 0.00271) 
+  - O(1.5^n) : (a = 1.25945, error = 0.00001) 
+  - O(2^n) : (a = -0.02936, error = 0.00045) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.129s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.36667, error = 0.00000) 
+  - O(2^n) : (a = 1.59835, error = 0.00017) 
+  - O(n^n) : (a = -0.00087, error = 0.00000) 
+[5.119s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 76.20040, error = 0.00000) 
+  - O(n^n) : (a = 0.73926, error = 0.00003) 
+[5.106s, n = 3] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 1
+Possible Big O functions: 
+  - O(1) : (a = 1.06987, error = 0.00227) 
+  - O(log n) : (a = 0.14809, error = 0.00127) 
+  - O(sqrt(n)) : (a = 0.08184, error = 0.00174) 
+  - O(n) : (a = 0.00930, error = 0.00036) 
+  - O(n log n) : (a = 0.00589, error = 0.00151) 
+  - O(n^2) : (a = 0.00062, error = 0.00003) 
+  - O(n^3) : (a = 0.00010, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00020, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.259s, n = 467] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.73121, error = 0.00850) 
+  - O(sqrt(n)) : (a = 0.30146, error = 0.00643) 
+  - O(n) : (a = 0.02159, error = 0.00115) 
+  - O(n log n) : (a = 0.00715, error = 0.00091) 
+  - O(n^2) : (a = 0.00060, error = 0.00002) 
+  - O(n^3) : (a = 0.00006, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00019, error = 0.00006) 
+  - O(2^n) : (a = 0.00010, error = 0.00001) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.208s, n = 868] Log                                       Guess: Θ(sqrt(n))            NO -- EXPECTED Θ(log n)
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.00159, error = 0.00001) 
+  - O(n) : (a = 0.00254, error = 0.00004) 
+  - O(n log n) : (a = -0.00059, error = 0.00001) 
+  - O(n^2) : (a = -0.00105, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.424s, n = 19] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.00258, error = 0.00001) 
+  - O(n log n) : (a = 0.16789, error = 0.00026) 
+  - O(n^2) : (a = 0.00082, error = 0.00005) 
+  - O(n^3) : (a = -0.00264, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00266, error = 0.00007) 
+  - O(2^n) : (a = -0.00266, error = 0.00007) 
+  - O(n^n) : (a = -0.00266, error = 0.00007) 
+[5.236s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 1.00125, error = 0.00003) 
+  - O(n^2) : (a = 0.05192, error = 0.00038) 
+  - O(n^3) : (a = -0.00178, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00141, error = 0.00001) 
+  - O(2^n) : (a = -0.00296, error = 0.00007) 
+  - O(n^n) : (a = -0.00298, error = 0.00007) 
+[5.173s, n = 11] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.00130, error = 0.00000) 
+  - O(n^3) : (a = 0.03381, error = 0.00013) 
+  - O(2^n) : (a = -0.01487, error = 0.00047) 
+  - O(n^n) : (a = -0.00688, error = 0.00016) 
+[5.191s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.00274, error = 0.00001) 
+  - O(n^n) : (a = -0.00686, error = 0.00006) 
+[5.176s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.55633, error = 0.00000) 
+  - O(n^3) : (a = 0.13966, error = 0.00480) 
+  - O(1.5^n) : (a = 1.68249, error = 0.00005) 
+  - O(2^n) : (a = -0.00524, error = 0.00002) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.140s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.97734, error = 0.00000) 
+  - O(n^3) : (a = 0.24981, error = 0.00925) 
+  - O(2^n) : (a = 1.03963, error = 0.00004) 
+  - O(n^n) : (a = 0.00230, error = 0.00000) 
+[5.125s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 76.21634, error = 0.00000) 
+  - O(n^n) : (a = 1.01867, error = 0.00022) 
+[5.106s, n = 3] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 1.25
+Possible Big O functions: 
+  - O(1) : (a = 0.96548, error = 0.00208) 
+  - O(log n) : (a = 0.13710, error = 0.00125) 
+  - O(sqrt(n)) : (a = 0.07156, error = 0.00172) 
+  - O(n) : (a = 0.00856, error = 0.00033) 
+  - O(n log n) : (a = 0.00249, error = 0.00006) 
+  - O(n^2) : (a = 0.00058, error = 0.00002) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00025, error = 0.00002) 
+  - O(2^n) : (a = 0.00012, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.262s, n = 469] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.87063, error = 0.00627) 
+  - O(sqrt(n)) : (a = 0.36180, error = 0.00448) 
+  - O(n) : (a = 0.03415, error = 0.00173) 
+  - O(n log n) : (a = 0.00777, error = 0.00029) 
+  - O(n^2) : (a = 0.00097, error = 0.00004) 
+  - O(n^3) : (a = 0.00010, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00029, error = 0.00011) 
+  - O(2^n) : (a = 0.00019, error = 0.00002) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.258s, n = 712] Log                                       Guess: Θ(sqrt(n))            NO -- EXPECTED Θ(log n)
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.26151, error = 0.00166) 
+  - O(n) : (a = 0.00586, error = 0.00002) 
+  - O(n log n) : (a = 0.00053, error = 0.00000) 
+  - O(n^2) : (a = -0.00000, error = 0.00000) 
+  - O(n^3) : (a = -0.00001, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.383s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.26328, error = 0.00117) 
+  - O(n log n) : (a = 0.21144, error = 0.00037) 
+  - O(n^2) : (a = 0.00165, error = 0.00006) 
+  - O(n^3) : (a = -0.00296, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00299, error = 0.00007) 
+  - O(2^n) : (a = -0.00299, error = 0.00007) 
+  - O(n^n) : (a = -0.00299, error = 0.00007) 
+[5.267s, n = 11] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 1.25696, error = 0.00026) 
+  - O(n^2) : (a = 0.06784, error = 0.00052) 
+  - O(n^3) : (a = -0.00172, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00155, error = 0.00001) 
+  - O(2^n) : (a = -0.00332, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.187s, n = 10] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.26257, error = 0.00045) 
+  - O(n^3) : (a = 0.04319, error = 0.00016) 
+  - O(2^n) : (a = -0.02263, error = 0.00130) 
+  - O(n^n) : (a = -0.00688, error = 0.00016) 
+[5.210s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.25913, error = 0.00011) 
+  - O(n^n) : (a = -0.00568, error = 0.00003) 
+[5.195s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.72666, error = 0.00003) 
+  - O(n^3) : (a = 0.17600, error = 0.00730) 
+  - O(1.5^n) : (a = 2.17161, error = 0.00211) 
+  - O(2^n) : (a = 0.03231, error = 0.00043) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.146s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.06322, error = 0.00000) 
+  - O(2^n) : (a = 1.30114, error = 0.00004) 
+  - O(n^n) : (a = 0.00025, error = 0.00000) 
+[5.128s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 78.44271, error = 0.00000) 
+  - O(n^n) : (a = 1.25791, error = 0.00004) 
+[5.107s, n = 3] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 1.5
+Possible Big O functions: 
+  - O(1) : (a = 1.06332, error = 0.00253) 
+  - O(log n) : (a = 0.13787, error = 0.00132) 
+  - O(sqrt(n)) : (a = 0.09289, error = 0.00535) 
+  - O(n) : (a = 0.00917, error = 0.00031) 
+  - O(n log n) : (a = 0.00600, error = 0.00174) 
+  - O(n^2) : (a = 0.00060, error = 0.00002) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00013, error = 0.00000) 
+  - O(2^n) : (a = 0.00007, error = 0.00000) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.258s, n = 470] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.07577, error = 0.00657) 
+  - O(sqrt(n)) : (a = 0.49332, error = 0.00699) 
+  - O(n) : (a = 0.03935, error = 0.00183) 
+  - O(n log n) : (a = 0.00977, error = 0.00046) 
+  - O(n^2) : (a = 0.00155, error = 0.00013) 
+  - O(n^3) : (a = 0.00020, error = 0.00001) 
+  - O(1.5^n) : (a = -0.00032, error = 0.00037) 
+  - O(2^n) : (a = 0.00021, error = 0.00013) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.303s, n = 601] Log                                       Guess: Θ(sqrt(n))            NO -- EXPECTED Θ(log n)
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.50808, error = 0.00092) 
+  - O(n) : (a = 0.00953, error = 0.00002) 
+  - O(n log n) : (a = -0.00078, error = 0.00004) 
+  - O(n^2) : (a = -0.00168, error = 0.00004) 
+  - O(n^3) : (a = -0.00168, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00168, error = 0.00004) 
+  - O(2^n) : (a = -0.00168, error = 0.00004) 
+  - O(n^n) : (a = -0.00168, error = 0.00004) 
+[5.436s, n = 18] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.50234, error = 0.00016) 
+  - O(n log n) : (a = 0.25528, error = 0.00047) 
+  - O(n^2) : (a = 0.00255, error = 0.00006) 
+  - O(n^3) : (a = -0.00333, error = 0.00008) 
+  - O(1.5^n) : (a = -0.00336, error = 0.00008) 
+  - O(2^n) : (a = -0.00336, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.299s, n = 10] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 1.50252, error = 0.00002) 
+  - O(n^2) : (a = 0.08049, error = 0.00067) 
+  - O(n^3) : (a = -0.00140, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00160, error = 0.00001) 
+  - O(2^n) : (a = -0.00331, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.206s, n = 10] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.51238, error = 0.00038) 
+  - O(n^3) : (a = 0.05901, error = 0.00014) 
+  - O(2^n) : (a = -0.02378, error = 0.00349) 
+  - O(n^n) : (a = -0.00928, error = 0.00021) 
+[5.230s, n = 5] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.51231, error = 0.00021) 
+  - O(n^n) : (a = -0.00457, error = 0.00002) 
+[5.213s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.83146, error = 0.00000) 
+  - O(n^3) : (a = 0.10464, error = 0.00271) 
+  - O(1.5^n) : (a = 1.25945, error = 0.00001) 
+  - O(2^n) : (a = -0.02936, error = 0.00045) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.155s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.05582, error = 0.00000) 
+  - O(n^3) : (a = 0.18684, error = 0.00527) 
+  - O(2^n) : (a = 0.77301, error = 0.00010) 
+  - O(n^n) : (a = 0.00194, error = 0.00000) 
+[5.133s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 78.03741, error = 0.00000) 
+  - O(n^n) : (a = 1.51527, error = 0.00016) 
+[5.109s, n = 3] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 1.75
+Possible Big O functions: 
+  - O(1) : (a = 0.96889, error = 0.00211) 
+  - O(log n) : (a = 0.13645, error = 0.00114) 
+  - O(sqrt(n)) : (a = 0.07632, error = 0.00162) 
+  - O(n) : (a = 0.00861, error = 0.00032) 
+  - O(n log n) : (a = 0.00242, error = 0.00007) 
+  - O(n^2) : (a = 0.00056, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00027, error = 0.00002) 
+  - O(2^n) : (a = 0.00013, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.263s, n = 468] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.23148, error = 0.00684) 
+  - O(n) : (a = 0.05743, error = 0.00332) 
+  - O(n log n) : (a = 0.01501, error = 0.00044) 
+  - O(n^2) : (a = 0.00193, error = 0.00019) 
+  - O(n^3) : (a = 0.00029, error = 0.00001) 
+  - O(1.5^n) : (a = 0.00253, error = 0.00096) 
+  - O(2^n) : (a = 0.00004, error = 0.00011) 
+  - O(n^n) : (a = 0.00001, error = 0.00000) 
+[5.353s, n = 532] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.75215, error = 0.00003) 
+  - O(n) : (a = 0.01233, error = 0.00004) 
+  - O(n log n) : (a = 0.00146, error = 0.00003) 
+  - O(n^2) : (a = -0.00000, error = 0.00000) 
+  - O(n^3) : (a = -0.00001, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.377s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.75202, error = 0.00004) 
+  - O(n log n) : (a = 0.32557, error = 0.00085) 
+  - O(n^2) : (a = 0.00871, error = 0.00006) 
+  - O(n^3) : (a = -0.00201, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00083, error = 0.00001) 
+  - O(2^n) : (a = -0.00137, error = 0.00002) 
+  - O(n^n) : (a = -0.00137, error = 0.00002) 
+[5.216s, n = 13] Linear                                     Guess: Θ(n log n)            NO -- EXPECTED Θ(n)
+Possible Big O functions: 
+  - O(n log n) : (a = 1.75337, error = 0.00016) 
+  - O(n^3) : (a = -0.00134, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00203, error = 0.00001) 
+  - O(2^n) : (a = -0.00379, error = 0.00009) 
+  - O(n^n) : (a = -0.00385, error = 0.00009) 
+[5.224s, n = 9] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.76000, error = 0.00033) 
+  - O(n^3) : (a = 0.09056, error = 0.00062) 
+  - O(n^n) : (a = -0.00378, error = 0.00007) 
+[5.139s, n = 8] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.76152, error = 0.00038) 
+[5.117s, n = 6] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.23454, error = 0.00000) 
+  - O(n^3) : (a = 0.12240, error = 0.00366) 
+  - O(1.5^n) : (a = 1.47335, error = 0.00002) 
+  - O(2^n) : (a = -0.01946, error = 0.00020) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.164s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.92669, error = 0.00000) 
+  - O(n^3) : (a = 0.21866, error = 0.00703) 
+  - O(2^n) : (a = 0.90965, error = 0.00002) 
+  - O(n^n) : (a = 0.00231, error = 0.00000) 
+[5.139s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+[5.109s, n = 4] S_Exp                                       Guess: NOT FOUND              NO -- EXPECTED Θ(n^n)
+
+Scale: 2
+Possible Big O functions: 
+  - O(1) : (a = 0.96935, error = 0.00207) 
+  - O(log n) : (a = 0.13872, error = 0.00126) 
+  - O(sqrt(n)) : (a = 0.07235, error = 0.00176) 
+  - O(n) : (a = 0.00859, error = 0.00031) 
+  - O(n log n) : (a = 0.00244, error = 0.00006) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00022, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.260s, n = 467] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.40691, error = 0.00784) 
+  - O(n) : (a = 0.05512, error = 0.00267) 
+  - O(n log n) : (a = 0.02058, error = 0.00167) 
+  - O(n^2) : (a = 0.00239, error = 0.00017) 
+  - O(n^3) : (a = 0.00031, error = 0.00001) 
+  - O(1.5^n) : (a = 0.00886, error = 0.00471) 
+  - O(2^n) : (a = 0.00011, error = 0.00009) 
+  - O(n^n) : (a = 0.00001, error = 0.00000) 
+[5.402s, n = 477] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.66815, error = 0.00000) 
+  - O(n) : (a = 0.00390, error = 0.00004) 
+  - O(n log n) : (a = -0.00059, error = 0.00002) 
+  - O(n^2) : (a = -0.00105, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.414s, n = 19] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.00276, error = 0.00002) 
+  - O(n log n) : (a = 0.18967, error = 0.00039) 
+  - O(n^2) : (a = 0.00420, error = 0.00005) 
+  - O(n^3) : (a = -0.00258, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00265, error = 0.00007) 
+  - O(2^n) : (a = -0.00266, error = 0.00007) 
+  - O(n^n) : (a = -0.00266, error = 0.00007) 
+[5.232s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 2.00515, error = 0.00015) 
+  - O(n^2) : (a = 0.11682, error = 0.00079) 
+  - O(n^3) : (a = -0.00128, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00278, error = 0.00002) 
+  - O(2^n) : (a = -0.00443, error = 0.00010) 
+  - O(n^n) : (a = -0.00450, error = 0.00011) 
+[5.241s, n = 8] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.00290, error = 0.00004) 
+  - O(n^3) : (a = 0.05591, error = 0.00036) 
+  - O(n^n) : (a = -0.00405, error = 0.00009) 
+[5.145s, n = 8] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.00605, error = 0.00004) 
+[5.119s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.13063, error = 0.00000) 
+  - O(n^3) : (a = 0.09207, error = 0.00222) 
+  - O(1.5^n) : (a = 1.08793, error = 0.00070) 
+  - O(2^n) : (a = -0.03708, error = 0.00073) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.173s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.16518, error = 0.00000) 
+  - O(n^3) : (a = 0.19891, error = 0.00601) 
+  - O(2^n) : (a = 0.82280, error = 0.00013) 
+  - O(n^n) : (a = 0.00163, error = 0.00000) 
+[5.143s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.04792, error = 0.00242) 
+[5.111s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 2.25
+Possible Big O functions: 
+  - O(1) : (a = 0.96871, error = 0.00195) 
+  - O(log n) : (a = 0.13671, error = 0.00112) 
+  - O(sqrt(n)) : (a = 0.07382, error = 0.00167) 
+  - O(n) : (a = 0.00860, error = 0.00031) 
+  - O(n log n) : (a = 0.00244, error = 0.00006) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00024, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.261s, n = 468] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.58458, error = 0.00688) 
+  - O(n) : (a = 0.06350, error = 0.00274) 
+  - O(n log n) : (a = 0.01777, error = 0.00061) 
+  - O(n^2) : (a = 0.00427, error = 0.00045) 
+  - O(n^3) : (a = 0.00040, error = 0.00002) 
+  - O(1.5^n) : (a = 0.01118, error = 0.00668) 
+  - O(2^n) : (a = 0.00006, error = 0.00013) 
+  - O(n^n) : (a = 0.00002, error = 0.00000) 
+[5.450s, n = 431] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.74494, error = 0.00103) 
+  - O(n) : (a = 0.00826, error = 0.00003) 
+  - O(n log n) : (a = 0.00101, error = 0.00000) 
+  - O(n^2) : (a = -0.00032, error = 0.00001) 
+  - O(n^3) : (a = -0.00031, error = 0.00001) 
+  - O(1.5^n) : (a = -0.00031, error = 0.00001) 
+  - O(2^n) : (a = -0.00031, error = 0.00001) 
+  - O(n^n) : (a = -0.00031, error = 0.00001) 
+[5.353s, n = 22] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.13439, error = 0.00054) 
+  - O(n log n) : (a = 0.21264, error = 0.00048) 
+  - O(n^2) : (a = 0.00503, error = 0.00005) 
+  - O(n^3) : (a = -0.00257, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00265, error = 0.00007) 
+  - O(2^n) : (a = -0.00266, error = 0.00007) 
+  - O(n^n) : (a = -0.00266, error = 0.00007) 
+[5.247s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 2.25326, error = 0.00006) 
+  - O(n^2) : (a = 0.13502, error = 0.00089) 
+  - O(n^3) : (a = -0.00090, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00316, error = 0.00003) 
+  - O(2^n) : (a = -0.00442, error = 0.00010) 
+  - O(n^n) : (a = -0.00450, error = 0.00011) 
+[5.257s, n = 8] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.12825, error = 0.00002) 
+  - O(n^3) : (a = 0.07035, error = 0.00037) 
+  - O(n^n) : (a = -0.00485, error = 0.00010) 
+[5.149s, n = 7] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.13197, error = 0.00012) 
+[5.121s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.92228, error = 0.00000) 
+  - O(n^3) : (a = 0.10447, error = 0.00273) 
+  - O(1.5^n) : (a = 1.25334, error = 0.00009) 
+  - O(2^n) : (a = 0.00520, error = 0.00000) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.181s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.99296, error = 0.00000) 
+  - O(n^3) : (a = 0.22449, error = 0.00750) 
+  - O(2^n) : (a = 0.93252, error = 0.00005) 
+  - O(n^n) : (a = 0.00236, error = 0.00000) 
+[5.148s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.12453, error = 0.00009) 
+[5.112s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 2.5
+Possible Big O functions: 
+  - O(1) : (a = 1.06635, error = 0.00293) 
+  - O(log n) : (a = 0.13721, error = 0.00128) 
+  - O(sqrt(n)) : (a = 0.09275, error = 0.00533) 
+  - O(n) : (a = 0.00916, error = 0.00035) 
+  - O(n log n) : (a = 0.00597, error = 0.00170) 
+  - O(n^2) : (a = 0.00060, error = 0.00002) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00019, error = 0.00001) 
+  - O(2^n) : (a = 0.00009, error = 0.00000) 
+  - O(n^n) : (a = -0.00005, error = 0.00000) 
+[5.258s, n = 470] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.76083, error = 0.00774) 
+  - O(n) : (a = 0.07105, error = 0.00237) 
+  - O(n log n) : (a = 0.01972, error = 0.00066) 
+  - O(n^2) : (a = 0.00545, error = 0.00066) 
+  - O(n^3) : (a = 0.00056, error = 0.00003) 
+  - O(1.5^n) : (a = -0.00149, error = 0.00142) 
+  - O(2^n) : (a = -0.00010, error = 0.00023) 
+  - O(n^n) : (a = 0.00003, error = 0.00000) 
+[5.494s, n = 394] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.25175, error = 0.00002) 
+  - O(n) : (a = 0.01247, error = 0.00004) 
+  - O(n log n) : (a = 0.00164, error = 0.00003) 
+  - O(n^2) : (a = -0.00000, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.377s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.25077, error = 0.00001) 
+  - O(n log n) : (a = 0.23811, error = 0.00055) 
+  - O(n^2) : (a = 0.00608, error = 0.00005) 
+  - O(n^3) : (a = -0.00287, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00298, error = 0.00007) 
+  - O(2^n) : (a = -0.00299, error = 0.00007) 
+  - O(n^n) : (a = -0.00299, error = 0.00007) 
+[5.265s, n = 11] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 2.50636, error = 0.00010) 
+  - O(n^2) : (a = 0.17710, error = 0.00079) 
+  - O(n^3) : (a = 0.00533, error = 0.00005) 
+  - O(2^n) : (a = -0.00245, error = 0.00004) 
+  - O(n^n) : (a = -0.00298, error = 0.00007) 
+[5.164s, n = 11] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.26279, error = 0.00061) 
+  - O(n^3) : (a = 0.07415, error = 0.00044) 
+  - O(n^n) : (a = -0.00479, error = 0.00010) 
+[5.154s, n = 7] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.26141, error = 0.00037) 
+[5.124s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.92089, error = 0.00000) 
+  - O(n^3) : (a = 0.08615, error = 0.00196) 
+  - O(1.5^n) : (a = 1.02768, error = 0.00033) 
+  - O(2^n) : (a = -0.04030, error = 0.00085) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.190s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.84817, error = 0.00000) 
+  - O(n^3) : (a = 0.20839, error = 0.00637) 
+  - O(2^n) : (a = 0.86667, error = 0.00002) 
+  - O(n^n) : (a = 0.00213, error = 0.00000) 
+[5.154s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.29621, error = 0.00252) 
+[5.112s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 2.75
+Possible Big O functions: 
+  - O(1) : (a = 0.97645, error = 0.00171) 
+  - O(log n) : (a = 0.13249, error = 0.00106) 
+  - O(sqrt(n)) : (a = 0.07426, error = 0.00175) 
+  - O(n) : (a = 0.00873, error = 0.00032) 
+  - O(n log n) : (a = 0.00262, error = 0.00007) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00026, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.263s, n = 465] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.93949, error = 0.00831) 
+  - O(n) : (a = 0.07995, error = 0.00241) 
+  - O(n log n) : (a = 0.02650, error = 0.00203) 
+  - O(n^2) : (a = 0.00610, error = 0.00076) 
+  - O(n^3) : (a = 0.00061, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00139, error = 0.00134) 
+  - O(2^n) : (a = -0.00022, error = 0.00031) 
+  - O(n^n) : (a = 0.00007, error = 0.00001) 
+[5.546s, n = 364] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.91513, error = 0.00012) 
+  - O(n) : (a = 0.00920, error = 0.00003) 
+  - O(n log n) : (a = 0.00001, error = 0.00002) 
+  - O(n^2) : (a = -0.00103, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.404s, n = 19] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.38315, error = 0.00051) 
+  - O(n log n) : (a = 0.26114, error = 0.00066) 
+  - O(n^2) : (a = 0.00696, error = 0.00005) 
+  - O(n^3) : (a = -0.00286, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00298, error = 0.00007) 
+  - O(2^n) : (a = -0.00299, error = 0.00007) 
+  - O(n^n) : (a = -0.00299, error = 0.00007) 
+[5.280s, n = 11] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 2.75005, error = 0.00006) 
+  - O(n^2) : (a = 0.19422, error = 0.00071) 
+  - O(n^3) : (a = 0.00603, error = 0.00006) 
+  - O(2^n) : (a = -0.00278, error = 0.00005) 
+  - O(n^n) : (a = -0.00298, error = 0.00007) 
+[5.168s, n = 11] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.38688, error = 0.00061) 
+  - O(n^3) : (a = 0.08329, error = 0.00047) 
+  - O(n^n) : (a = -0.00474, error = 0.00010) 
+[5.160s, n = 7] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.38936, error = 0.00051) 
+[5.124s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 20.95394, error = 0.00000) 
+  - O(n^3) : (a = 0.07489, error = 0.00158) 
+  - O(1.5^n) : (a = 0.90206, error = 0.00031) 
+  - O(2^n) : (a = -0.04686, error = 0.00114) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.200s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.94204, error = 0.00000) 
+  - O(2^n) : (a = 1.16056, error = 0.00004) 
+  - O(n^n) : (a = -0.00346, error = 0.00001) 
+[5.159s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.41619, error = 0.00273) 
+[5.114s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 3
+Possible Big O functions: 
+  - O(1) : (a = 0.97407, error = 0.00187) 
+  - O(log n) : (a = 0.13887, error = 0.00126) 
+  - O(sqrt(n)) : (a = 0.08173, error = 0.00309) 
+  - O(n) : (a = 0.00866, error = 0.00032) 
+  - O(n log n) : (a = 0.00245, error = 0.00007) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00027, error = 0.00002) 
+  - O(2^n) : (a = 0.00013, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.260s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.69319, error = 0.00410) 
+  - O(n) : (a = 0.08912, error = 0.00312) 
+  - O(n log n) : (a = 0.02431, error = 0.00574) 
+  - O(n^2) : (a = 0.00306, error = 0.00008) 
+  - O(n^3) : (a = 0.00047, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00261, error = 0.00877) 
+  - O(n^n) : (a = -0.00039, error = 0.00018) 
+[5.597s, n = 338] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.74801, error = 0.00014) 
+  - O(n) : (a = 0.00954, error = 0.00002) 
+  - O(n log n) : (a = -0.00063, error = 0.00004) 
+  - O(n^2) : (a = -0.00167, error = 0.00004) 
+  - O(n^3) : (a = -0.00168, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00168, error = 0.00004) 
+  - O(2^n) : (a = -0.00168, error = 0.00004) 
+  - O(n^n) : (a = -0.00168, error = 0.00004) 
+[5.428s, n = 18] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 1.00254, error = 0.00001) 
+  - O(n log n) : (a = 0.19458, error = 0.00035) 
+  - O(n^2) : (a = 0.00446, error = 0.00006) 
+  - O(n^3) : (a = -0.00326, error = 0.00008) 
+  - O(1.5^n) : (a = -0.00336, error = 0.00008) 
+  - O(2^n) : (a = -0.00336, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.294s, n = 10] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 3.00167, error = 0.00004) 
+  - O(n^2) : (a = 0.22671, error = 0.00084) 
+  - O(n^3) : (a = 0.00734, error = 0.00006) 
+  - O(2^n) : (a = -0.00370, error = 0.00008) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.175s, n = 10] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.74007, error = 0.00041) 
+  - O(n^3) : (a = 0.04583, error = 0.00022) 
+  - O(n^n) : (a = -0.00502, error = 0.00011) 
+[5.164s, n = 7] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.74005, error = 0.00026) 
+[5.126s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.20478, error = 0.00000) 
+  - O(n^3) : (a = 0.08204, error = 0.00185) 
+  - O(1.5^n) : (a = 0.97559, error = 0.00066) 
+  - O(2^n) : (a = -0.04437, error = 0.00103) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.207s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.96735, error = 0.00000) 
+  - O(n^3) : (a = 0.21392, error = 0.00677) 
+  - O(2^n) : (a = 0.88887, error = 0.00004) 
+  - O(n^n) : (a = 0.00222, error = 0.00000) 
+[5.164s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.71787, error = 0.00033) 
+[5.115s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 3.25
+Possible Big O functions: 
+  - O(1) : (a = 1.07738, error = 0.00288) 
+  - O(log n) : (a = 0.13886, error = 0.00147) 
+  - O(sqrt(n)) : (a = 0.09392, error = 0.00526) 
+  - O(n) : (a = 0.00939, error = 0.00035) 
+  - O(n log n) : (a = 0.00599, error = 0.00170) 
+  - O(n^2) : (a = 0.00060, error = 0.00002) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00022, error = 0.00001) 
+  - O(2^n) : (a = 0.00008, error = 0.00000) 
+  - O(n^n) : (a = -0.00005, error = 0.00000) 
+[5.263s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.14527, error = 0.00299) 
+  - O(n) : (a = 0.10118, error = 0.00172) 
+  - O(n log n) : (a = 0.02852, error = 0.00146) 
+  - O(n^2) : (a = 0.00405, error = 0.00034) 
+  - O(n^3) : (a = 0.00072, error = 0.00003) 
+  - O(1.5^n) : (a = -0.00264, error = 0.00353) 
+  - O(2^n) : (a = 0.00950, error = 0.00618) 
+  - O(n^n) : (a = -0.00020, error = 0.00002) 
+[5.644s, n = 319] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.08654, error = 0.00005) 
+  - O(n) : (a = 0.01536, error = 0.00005) 
+  - O(n log n) : (a = 0.00226, error = 0.00000) 
+  - O(n^2) : (a = -0.00035, error = 0.00001) 
+  - O(n^3) : (a = -0.00031, error = 0.00001) 
+  - O(1.5^n) : (a = -0.00031, error = 0.00001) 
+  - O(2^n) : (a = -0.00031, error = 0.00001) 
+  - O(n^n) : (a = -0.00031, error = 0.00001) 
+[5.348s, n = 22] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.81376, error = 0.00000) 
+  - O(n log n) : (a = 0.17308, error = 0.00046) 
+  - O(n^2) : (a = 0.01198, error = 0.00012) 
+  - O(n^3) : (a = 0.00035, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00081, error = 0.00001) 
+  - O(2^n) : (a = 0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.206s, n = 14] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 3.25283, error = 0.00016) 
+  - O(n^2) : (a = 0.24558, error = 0.00148) 
+  - O(n^3) : (a = 0.00807, error = 0.00007) 
+  - O(2^n) : (a = -0.00440, error = 0.00013) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.181s, n = 10] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 1.09040, error = 0.00013) 
+  - O(n^3) : (a = 0.07121, error = 0.00032) 
+  - O(n^n) : (a = -0.00618, error = 0.00013) 
+[5.169s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.80501, error = 0.00015) 
+[5.128s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.07209, error = 0.00000) 
+  - O(n^3) : (a = 0.11360, error = 0.00317) 
+  - O(1.5^n) : (a = 1.36542, error = 0.00002) 
+  - O(2^n) : (a = 0.07178, error = 0.00225) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.216s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.00510, error = 0.00000) 
+  - O(n^3) : (a = 0.23163, error = 0.00797) 
+  - O(2^n) : (a = 0.96283, error = 0.00005) 
+  - O(n^n) : (a = 0.00056, error = 0.00000) 
+[5.170s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.10966, error = 0.00152) 
+[5.117s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 3.5
+Possible Big O functions: 
+  - O(1) : (a = 1.06759, error = 0.00236) 
+  - O(log n) : (a = 0.13331, error = 0.00103) 
+  - O(sqrt(n)) : (a = 0.08322, error = 0.00178) 
+  - O(n) : (a = 0.00927, error = 0.00035) 
+  - O(n log n) : (a = 0.00600, error = 0.00171) 
+  - O(n^2) : (a = 0.00061, error = 0.00002) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00019, error = 0.00001) 
+  - O(2^n) : (a = 0.00009, error = 0.00000) 
+  - O(n^n) : (a = -0.00005, error = 0.00000) 
+[5.262s, n = 468] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.81204, error = 0.00256) 
+  - O(n) : (a = 0.10667, error = 0.00316) 
+  - O(n log n) : (a = 0.02978, error = 0.00625) 
+  - O(n^2) : (a = 0.00405, error = 0.00015) 
+  - O(n^3) : (a = 0.00062, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00350, error = 0.00992) 
+  - O(n^n) : (a = -0.00044, error = 0.00020) 
+[5.692s, n = 298] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.86899, error = 0.00046) 
+  - O(n) : (a = 0.01234, error = 0.00004) 
+  - O(n log n) : (a = 0.00180, error = 0.00003) 
+  - O(n^2) : (a = 0.00000, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.369s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.87667, error = 0.00000) 
+  - O(n log n) : (a = 0.18818, error = 0.00051) 
+  - O(n^2) : (a = 0.00865, error = 0.00006) 
+  - O(n^3) : (a = -0.00211, error = 0.00005) 
+  - O(1.5^n) : (a = -0.00172, error = 0.00003) 
+  - O(2^n) : (a = -0.00104, error = 0.00001) 
+  - O(n^n) : (a = -0.00024, error = 0.00000) 
+[5.214s, n = 13] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 3.50008, error = 0.00004) 
+  - O(n^2) : (a = 0.26632, error = 0.00235) 
+  - O(n^3) : (a = 0.00880, error = 0.00007) 
+  - O(2^n) : (a = -0.00490, error = 0.00016) 
+  - O(n^n) : (a = -0.00336, error = 0.00008) 
+[5.188s, n = 10] Linearxlog                                 Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.87006, error = 0.00010) 
+  - O(n^3) : (a = 0.05950, error = 0.00022) 
+  - O(n^n) : (a = -0.00630, error = 0.00013) 
+[5.173s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.86974, error = 0.00005) 
+[5.131s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 21.07888, error = 0.00000) 
+  - O(n^3) : (a = 0.07980, error = 0.00175) 
+  - O(1.5^n) : (a = 0.95474, error = 0.00042) 
+  - O(2^n) : (a = 0.00908, error = 0.00001) 
+  - O(n^n) : (a = -0.00078, error = 0.00000) 
+[5.225s, n = 3] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.02732, error = 0.00000) 
+  - O(n^3) : (a = 0.21825, error = 0.00711) 
+  - O(2^n) : (a = 0.90601, error = 0.00006) 
+  - O(n^n) : (a = -0.00551, error = 0.00002) 
+[5.176s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 1.20035, error = 0.00154) 
+[5.118s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 3.75
+Possible Big O functions: 
+  - O(1) : (a = 1.07369, error = 0.00256) 
+  - O(log n) : (a = 0.13524, error = 0.00103) 
+  - O(sqrt(n)) : (a = 0.09408, error = 0.00553) 
+  - O(n) : (a = 0.00928, error = 0.00034) 
+  - O(n log n) : (a = 0.00611, error = 0.00176) 
+  - O(n^2) : (a = 0.00061, error = 0.00003) 
+  - O(n^3) : (a = 0.00010, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00015, error = 0.00000) 
+  - O(2^n) : (a = 0.00007, error = 0.00000) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.262s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.31980, error = 0.00215) 
+  - O(n) : (a = 0.11258, error = 0.00269) 
+  - O(n log n) : (a = 0.03261, error = 0.00206) 
+  - O(n^2) : (a = 0.00569, error = 0.00039) 
+  - O(n^3) : (a = 0.00096, error = 0.00007) 
+  - O(n^n) : (a = -0.00020, error = 0.00001) 
+[5.735s, n = 282] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.93876, error = 0.00000) 
+  - O(n) : (a = 0.01368, error = 0.00004) 
+  - O(n log n) : (a = 0.00053, error = 0.00003) 
+  - O(n^2) : (a = 0.00016, error = 0.00004) 
+  - O(n^3) : (a = 0.00016, error = 0.00004) 
+  - O(1.5^n) : (a = 0.00016, error = 0.00004) 
+  - O(2^n) : (a = 0.00016, error = 0.00004) 
+  - O(n^n) : (a = 0.00016, error = 0.00004) 
+[5.387s, n = 20] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.93398, error = 0.00008) 
+  - O(n log n) : (a = 0.20083, error = 0.00057) 
+  - O(n^2) : (a = 0.00937, error = 0.00006) 
+  - O(n^3) : (a = -0.00221, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00171, error = 0.00003) 
+  - O(2^n) : (a = -0.00110, error = 0.00001) 
+  - O(n^n) : (a = -0.00024, error = 0.00000) 
+[5.220s, n = 13] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 3.75471, error = 0.00024) 
+  - O(n^2) : (a = 0.31612, error = 0.00547) 
+  - O(n^3) : (a = 0.01046, error = 0.00008) 
+  - O(2^n) : (a = -0.00664, error = 0.00026) 
+  - O(n^n) : (a = -0.00384, error = 0.00009) 
+[5.194s, n = 9] Linearxlog                                  Guess: Θ(n^2)                NO -- EXPECTED Θ(n log n)
+Possible Big O functions: 
+  - O(n^2) : (a = 1.26136, error = 0.00041) 
+  - O(n^3) : (a = 0.08269, error = 0.00036) 
+  - O(n^n) : (a = -0.00609, error = 0.00012) 
+[5.180s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.26176, error = 0.00036) 
+[5.133s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.04333, error = 0.00041) 
+  - O(1.5^n) : (a = 1.21422, error = 0.00006) 
+  - O(2^n) : (a = 0.03852, error = 0.00012) 
+  - O(n^n) : (a = -0.01226, error = 0.00022) 
+[5.132s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.05936, error = 0.00000) 
+  - O(n^3) : (a = 0.23373, error = 0.00818) 
+  - O(2^n) : (a = 0.97073, error = 0.00007) 
+  - O(n^n) : (a = 0.00208, error = 0.00000) 
+[5.181s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.94537, error = 0.00027) 
+[5.117s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 4
+Possible Big O functions: 
+  - O(1) : (a = 0.97221, error = 0.00187) 
+  - O(log n) : (a = 0.13336, error = 0.00102) 
+  - O(sqrt(n)) : (a = 0.07393, error = 0.00177) 
+  - O(n) : (a = 0.00871, error = 0.00033) 
+  - O(n log n) : (a = 0.00258, error = 0.00007) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00028, error = 0.00002) 
+  - O(2^n) : (a = 0.00013, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.262s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.93489, error = 0.00110) 
+  - O(n) : (a = 0.12240, error = 0.00564) 
+  - O(n log n) : (a = 0.03472, error = 0.00795) 
+  - O(n^2) : (a = 0.00569, error = 0.00016) 
+  - O(n^3) : (a = 0.00081, error = 0.00004) 
+  - O(2^n) : (a = -0.00178, error = 0.00311) 
+  - O(n^n) : (a = -0.00050, error = 0.00020) 
+[5.788s, n = 267] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.80147, error = 0.00000) 
+  - O(n) : (a = 0.01252, error = 0.00002) 
+  - O(n log n) : (a = 0.00019, error = 0.00003) 
+  - O(n^2) : (a = -0.00100, error = 0.00002) 
+  - O(n^3) : (a = -0.00105, error = 0.00002) 
+  - O(1.5^n) : (a = -0.00105, error = 0.00002) 
+  - O(2^n) : (a = -0.00105, error = 0.00002) 
+  - O(n^n) : (a = -0.00105, error = 0.00002) 
+[5.409s, n = 19] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.79487, error = 0.00040) 
+  - O(n log n) : (a = 0.17490, error = 0.00041) 
+  - O(n^2) : (a = 0.00806, error = 0.00005) 
+  - O(n^3) : (a = -0.00241, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00205, error = 0.00004) 
+  - O(2^n) : (a = -0.00264, error = 0.00006) 
+  - O(n^n) : (a = -0.00265, error = 0.00007) 
+[5.229s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 4.00306, error = 0.00006) 
+  - O(n^2) : (a = 0.34129, error = 0.00769) 
+  - O(n^3) : (a = 0.01125, error = 0.00009) 
+  - O(2^n) : (a = -0.00728, error = 0.00033) 
+  - O(n^n) : (a = -0.00384, error = 0.00009) 
+[5.198s, n = 9] Linearxlog                                  Guess: Θ(n^2)                NO -- EXPECTED Θ(n log n)
+Possible Big O functions: 
+  - O(n^2) : (a = 0.79285, error = 0.00021) 
+  - O(n^3) : (a = 0.05396, error = 0.00020) 
+  - O(n^n) : (a = -0.00634, error = 0.00013) 
+[5.185s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.79306, error = 0.00012) 
+[5.135s, n = 5] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.03004, error = 0.00035) 
+  - O(1.5^n) : (a = 0.91539, error = 0.00019) 
+  - O(2^n) : (a = 0.01031, error = 0.00034) 
+  - O(n^n) : (a = -0.01233, error = 0.00023) 
+[5.133s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.97437, error = 0.00000) 
+  - O(n^3) : (a = 0.22198, error = 0.00730) 
+  - O(2^n) : (a = 0.92258, error = 0.00004) 
+  - O(n^n) : (a = 0.00231, error = 0.00000) 
+[5.185s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.80074, error = 0.00000) 
+[5.120s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 4.25
+Possible Big O functions: 
+  - O(1) : (a = 0.96600, error = 0.00219) 
+  - O(log n) : (a = 0.13555, error = 0.00154) 
+  - O(sqrt(n)) : (a = 0.07538, error = 0.00159) 
+  - O(n) : (a = 0.00857, error = 0.00031) 
+  - O(n log n) : (a = 0.00239, error = 0.00006) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00023, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.257s, n = 469] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.48117, error = 0.00374) 
+  - O(n) : (a = 0.12665, error = 0.00503) 
+  - O(n log n) : (a = 0.03755, error = 0.00249) 
+  - O(n^2) : (a = 0.00552, error = 0.00052) 
+  - O(n^3) : (a = 0.00123, error = 0.00009) 
+  - O(2^n) : (a = -0.00155, error = 0.00088) 
+  - O(n^n) : (a = -0.00021, error = 0.00001) 
+[5.919s, n = 255] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.84214, error = 0.00075) 
+  - O(n) : (a = 0.01525, error = 0.00005) 
+  - O(n log n) : (a = 0.00016, error = 0.00004) 
+  - O(n^2) : (a = -0.00167, error = 0.00004) 
+  - O(n^3) : (a = -0.00168, error = 0.00004) 
+  - O(1.5^n) : (a = -0.00168, error = 0.00004) 
+  - O(2^n) : (a = -0.00168, error = 0.00004) 
+  - O(n^n) : (a = -0.00168, error = 0.00004) 
+[5.430s, n = 18] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.85070, error = 0.00000) 
+  - O(n log n) : (a = 0.18545, error = 0.00047) 
+  - O(n^2) : (a = 0.00869, error = 0.00006) 
+  - O(n^3) : (a = -0.00239, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00203, error = 0.00004) 
+  - O(2^n) : (a = -0.00264, error = 0.00006) 
+  - O(n^n) : (a = -0.00265, error = 0.00007) 
+[5.234s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 4.25407, error = 0.00004) 
+  - O(n^3) : (a = 0.01203, error = 0.00010) 
+  - O(2^n) : (a = -0.00812, error = 0.00043) 
+  - O(n^n) : (a = -0.00384, error = 0.00009) 
+[5.205s, n = 9] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.84234, error = 0.00020) 
+  - O(n^3) : (a = 0.05753, error = 0.00022) 
+  - O(n^n) : (a = -0.00632, error = 0.00013) 
+[5.189s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.84523, error = 0.00003) 
+[5.147s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.03268, error = 0.00036) 
+  - O(1.5^n) : (a = 0.97387, error = 0.00016) 
+  - O(2^n) : (a = 0.05070, error = 0.00027) 
+  - O(n^n) : (a = -0.01232, error = 0.00022) 
+[5.135s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.00765, error = 0.00000) 
+  - O(2^n) : (a = 1.11415, error = 0.00000) 
+  - O(n^n) : (a = -0.00224, error = 0.00000) 
+[5.190s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.85285, error = 0.00012) 
+[5.120s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 4.5
+Possible Big O functions: 
+  - O(1) : (a = 0.97358, error = 0.00191) 
+  - O(log n) : (a = 0.13667, error = 0.00154) 
+  - O(sqrt(n)) : (a = 0.07851, error = 0.00176) 
+  - O(n) : (a = 0.00868, error = 0.00031) 
+  - O(n log n) : (a = 0.00269, error = 0.00006) 
+  - O(n^2) : (a = 0.00057, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00024, error = 0.00001) 
+  - O(2^n) : (a = 0.00011, error = 0.00001) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.263s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.77617, error = 0.00250) 
+  - O(n^2) : (a = 0.00534, error = 0.00045) 
+  - O(n^3) : (a = 0.00078, error = 0.00003) 
+  - O(2^n) : (a = -0.00210, error = 0.00625) 
+  - O(n^n) : (a = -0.00077, error = 0.00084) 
+[5.882s, n = 244] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 1.13201, error = 0.00060) 
+  - O(n) : (a = 0.02608, error = 0.00016) 
+  - O(n log n) : (a = 0.00321, error = 0.00002) 
+  - O(n^2) : (a = -0.00036, error = 0.00001) 
+  - O(n^3) : (a = -0.00031, error = 0.00001) 
+  - O(1.5^n) : (a = -0.00031, error = 0.00001) 
+  - O(2^n) : (a = -0.00031, error = 0.00001) 
+  - O(n^n) : (a = -0.00031, error = 0.00001) 
+[5.341s, n = 22] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.90114, error = 0.00000) 
+  - O(n log n) : (a = 0.19582, error = 0.00051) 
+  - O(n^2) : (a = 0.00934, error = 0.00006) 
+  - O(n^3) : (a = -0.00238, error = 0.00006) 
+  - O(1.5^n) : (a = -0.00199, error = 0.00004) 
+  - O(2^n) : (a = -0.00264, error = 0.00006) 
+  - O(n^n) : (a = -0.00265, error = 0.00007) 
+[5.243s, n = 12] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 4.50415, error = 0.00003) 
+  - O(n^3) : (a = 0.01277, error = 0.00010) 
+  - O(2^n) : (a = -0.00898, error = 0.00055) 
+  - O(n^n) : (a = -0.00384, error = 0.00009) 
+[5.216s, n = 9] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.89516, error = 0.00006) 
+  - O(n^3) : (a = 0.06147, error = 0.00023) 
+  - O(n^n) : (a = -0.00628, error = 0.00013) 
+[5.195s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.90024, error = 0.00000) 
+[5.139s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.04329, error = 0.00041) 
+  - O(1.5^n) : (a = 1.21028, error = 0.00011) 
+  - O(2^n) : (a = 0.03340, error = 0.00006) 
+  - O(n^n) : (a = -0.01226, error = 0.00022) 
+[5.137s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 11.99296, error = 0.00000) 
+  - O(n^3) : (a = 0.24943, error = 0.00926) 
+  - O(2^n) : (a = 1.03744, error = 0.00005) 
+  - O(n^n) : (a = -0.00665, error = 0.00003) 
+[5.196s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.90993, error = 0.00015) 
+[5.121s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 4.75
+Possible Big O functions: 
+  - O(1) : (a = 0.96433, error = 0.00248) 
+  - O(log n) : (a = 0.14797, error = 0.00167) 
+  - O(sqrt(n)) : (a = 0.07204, error = 0.00194) 
+  - O(n) : (a = 0.00866, error = 0.00036) 
+  - O(n log n) : (a = 0.00251, error = 0.00005) 
+  - O(n^2) : (a = 0.00058, error = 0.00002) 
+  - O(n^3) : (a = 0.00008, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00035, error = 0.00004) 
+  - O(2^n) : (a = 0.00017, error = 0.00001) 
+  - O(n^n) : (a = -0.00003, error = 0.00000) 
+[5.264s, n = 471] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 1.10236, error = 0.00096) 
+  - O(n) : (a = 0.14653, error = 0.00875) 
+  - O(n log n) : (a = 0.04264, error = 0.00900) 
+  - O(n^2) : (a = 0.00598, error = 0.00021) 
+  - O(n^3) : (a = 0.00109, error = 0.00005) 
+  - O(2^n) : (a = -0.00214, error = 0.00359) 
+  - O(n^n) : (a = -0.00057, error = 0.00022) 
+[5.931s, n = 234] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.94859, error = 0.00007) 
+  - O(n) : (a = 0.02201, error = 0.00009) 
+  - O(n log n) : (a = 0.00298, error = 0.00003) 
+  - O(n^2) : (a = 0.00002, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.354s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.94697, error = 0.00002) 
+  - O(n log n) : (a = 0.20897, error = 0.00052) 
+  - O(n^2) : (a = 0.01046, error = 0.00006) 
+  - O(n^3) : (a = -0.00266, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00218, error = 0.00004) 
+  - O(2^n) : (a = -0.00298, error = 0.00007) 
+  - O(n^n) : (a = -0.00298, error = 0.00007) 
+[5.251s, n = 11] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 4.75724, error = 0.00004) 
+  - O(n^3) : (a = 0.01502, error = 0.00011) 
+  - O(2^n) : (a = -0.01183, error = 0.00076) 
+  - O(n^n) : (a = -0.00450, error = 0.00011) 
+[5.218s, n = 8] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.94636, error = 0.00005) 
+  - O(n^3) : (a = 0.06607, error = 0.00025) 
+  - O(n^n) : (a = -0.00626, error = 0.00013) 
+[5.199s, n = 6] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.95043, error = 0.00000) 
+[5.142s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.03796, error = 0.00039) 
+  - O(1.5^n) : (a = 1.10342, error = 0.00007) 
+  - O(2^n) : (a = 0.05298, error = 0.00033) 
+  - O(n^n) : (a = -0.01229, error = 0.00022) 
+[5.138s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.04006, error = 0.00000) 
+  - O(2^n) : (a = 1.09531, error = 0.00005) 
+  - O(n^n) : (a = 0.00277, error = 0.00001) 
+[5.200s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.95317, error = 0.00021) 
+[5.123s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+
+Scale: 5
+Possible Big O functions: 
+  - O(1) : (a = 0.97294, error = 0.00199) 
+  - O(log n) : (a = 0.14194, error = 0.00136) 
+  - O(sqrt(n)) : (a = 0.07255, error = 0.00181) 
+  - O(n) : (a = 0.00869, error = 0.00036) 
+  - O(n log n) : (a = -0.00614, error = 0.00015) 
+  - O(n^2) : (a = 0.00060, error = 0.00003) 
+  - O(n^3) : (a = 0.00009, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00029, error = 0.00003) 
+  - O(2^n) : (a = 0.00016, error = 0.00002) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.262s, n = 466] Constant                                  Guess: Θ(1)                  OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 0.86959, error = 0.00138) 
+  - O(n^2) : (a = 0.00583, error = 0.00035) 
+  - O(n^3) : (a = 0.00093, error = 0.00002) 
+  - O(2^n) : (a = -0.00278, error = 0.00919) 
+  - O(n^n) : (a = -0.00086, error = 0.00083) 
+[5.981s, n = 223] Log                                       Guess: Θ(log n)              OK                  
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.83100, error = 0.00024) 
+  - O(n) : (a = 0.01727, error = 0.00005) 
+  - O(n log n) : (a = 0.00268, error = 0.00003) 
+  - O(n^2) : (a = 0.00002, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00001, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.366s, n = 21] Sqrt                                       Guess: Θ(sqrt(n))            OK                  
+Possible Big O functions: 
+  - O(n) : (a = 0.83085, error = 0.00016) 
+  - O(n log n) : (a = 0.18465, error = 0.00043) 
+  - O(n^2) : (a = 0.00889, error = 0.00006) 
+  - O(n^3) : (a = -0.00270, error = 0.00007) 
+  - O(1.5^n) : (a = -0.00227, error = 0.00004) 
+  - O(2^n) : (a = -0.00298, error = 0.00007) 
+  - O(n^n) : (a = -0.00298, error = 0.00007) 
+[5.259s, n = 11] Linear                                     Guess: Θ(n)                  OK                  
+Possible Big O functions: 
+  - O(n log n) : (a = 5.00083, error = 0.00005) 
+  - O(n^3) : (a = 0.01581, error = 0.00012) 
+  - O(2^n) : (a = -0.01270, error = 0.00091) 
+  - O(n^n) : (a = -0.00450, error = 0.00011) 
+[5.222s, n = 8] Linearxlog                                  Guess: Θ(n log n)            OK                  
+Possible Big O functions: 
+  - O(n^2) : (a = 0.82687, error = 0.00012) 
+  - O(n^3) : (a = 0.06243, error = 0.00016) 
+  - O(n^n) : (a = -0.00856, error = 0.00017) 
+[5.204s, n = 5] Quadratic                                   Guess: Θ(n^2)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 1.00041, error = 0.00000) 
+[5.142s, n = 4] Cubic                                       Guess: Θ(n^3)                OK                  
+Possible Big O functions: 
+  - O(n^3) : (a = 0.03385, error = 0.00037) 
+  - O(1.5^n) : (a = 0.99499, error = 0.00045) 
+  - O(2^n) : (a = 0.03833, error = 0.00009) 
+  - O(n^n) : (a = -0.01232, error = 0.00022) 
+[5.140s, n = 4] Exp                                         Guess: Θ(1.5^n)              OK                  
+Possible Big O functions: 
+  - O(log n) : (a = 12.05150, error = 0.00000) 
+  - O(n^3) : (a = 0.22655, error = 0.00767) 
+  - O(2^n) : (a = 0.94066, error = 0.00007) 
+  - O(n^n) : (a = 0.00237, error = 0.00000) 
+[5.206s, n = 3] Exp                                         Guess: Θ(2^n)                OK                  
+Possible Big O functions: 
+  - O(n^n) : (a = 0.82968, error = 0.00001) 
+[5.123s, n = 4] S_Exp                                       Guess: Θ(n^n)                OK                  
+

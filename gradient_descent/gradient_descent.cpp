@@ -7,12 +7,12 @@
 using namespace std;
 
 // a simple macro to quickly write scope
-#define gd(return_type) template<class T> return_type gradient_descent<T>
+#define gd(return_type) return_type gradient_descent
 #define DEFAULT_ITERATIONS 5
 #define DEFAULT_DELTA 0.00001
 
 // ----------- PRIVATE -----------
-gd(void)::init(function<T(T[])> func, int func_argument_count, int iterations){
+gd(void)::init(function<long double(long double[])> func, int func_argument_count, int iterations){
     assert(func_argument_count > 0);
     assert(iterations >= 0);
     this->func = func;
@@ -20,11 +20,11 @@ gd(void)::init(function<T(T[])> func, int func_argument_count, int iterations){
     this->iterations = iterations;
     this->delta = DEFAULT_DELTA;
     this->verbose = false;
-    this->bmin = true;
-    this->gradient = vector<T>(num_args);
-    this->previous_gradient = vector<T>(num_args);
-    this->guess = vector<T>(num_args);
-    this->previous_guess = vector<T>(num_args);
+    this->min = true;
+    this->gradient = vector<long double>(num_args);
+    this->previous_gradient = vector<long double>(num_args);
+    this->guess = vector<long double>(num_args);
+    this->previous_guess = vector<long double>(num_args);
 
     for(int i = 0; i < num_args; ++i){
         guess[i] = 0; // we initialize each element in initial_guess to 0.
@@ -33,32 +33,35 @@ gd(void)::init(function<T(T[])> func, int func_argument_count, int iterations){
 }
 
 gd(void)::solve_gradient(){
-    T* args = new T[num_args];
+    long double* args = new long double[num_args];
     
     // initializing the arguments.
     for(int i = 0; i < num_args; ++i){
         args[i] = guess[i];
         if(verbose){
-            printf("previous_guess[%d] = %Lf, ", i, previous_guess[i]);
-            printf("guess[%d] = %Lf, ", i, guess[i]);
+            printf("p_guess[%d] = %Lf, ", i, previous_guess[i]);
+            printf("guess[%d] = %Lf, \n", i, guess[i]);
         }
     }
 
     // solving for f(x) and f(x + dx).
-    T fx = func(args);
+    long double fx = func(args);
+    fx = isnan(fx) ? 0 : fx;
     if(verbose)
         printf("fx = %Lf,", fx);
     args[0] += delta;
-    T fxdx = func(args);
+    long double fxdx = func(args);
+    fxdx = isnan(fxdx) ? 0 : fxdx;
     if(verbose)
         printf("fxdx = %Lf, ", fxdx);
 
     // solving for the first partial derivative
     previous_gradient[0] = gradient[0];
     gradient[0] = (fxdx - fx) / delta;
+    gradient[0] = isnan(gradient[0]) ? 0 : gradient[0];
     if(verbose){
-        printf("previous_gradient[0] = %Lf, ", previous_gradient[0]);
-        printf("gradient[0] = %Lf, ", gradient[0]);
+        printf("p_gradient[0] = %Lf, ", previous_gradient[0]);
+        printf("gradient[0] = %Lf, \n", gradient[0]);
     }
 
     // solving for the rest of the partials.
@@ -69,8 +72,9 @@ gd(void)::solve_gradient(){
         
         previous_gradient[i] = gradient[i];
         gradient[i] = (fxdx - fx) / delta;
+        gradient[i] = isnan(gradient[i]) ? 0 : gradient[i];
         if(verbose){
-            printf("previous_gradient[%d] = %Lf, ", i, previous_gradient[i]);
+            printf("p_gradient[%d] = %Lf, ", i, previous_gradient[i]);
             printf("gradient[%d] = %Lf\n", i, gradient[i]);
         }
     }
@@ -79,9 +83,9 @@ gd(void)::solve_gradient(){
 }
 
 // we solve for the learning rate using the Barzilai-Borwein method
-gd(T)::solve_learning_rate(){
-    T tot1 = 0;
-    T tot2 = 0;
+gd(long double)::solve_learning_rate(){
+    long double tot1 = 0;
+    long double tot2 = 0;
     for(int i = 0; i < num_args; ++i){
         if(verbose){
             printf("\n((%Lf - %Lf) * (%Lf - %Lf))^2 = %Lf", guess[i], previous_guess[i],
@@ -94,8 +98,8 @@ gd(T)::solve_learning_rate(){
         tot2 += pow(gradient[i] - previous_gradient[i], 2);
     }
 
-    if(tot2 == 0){
-        return 0.00001;
+    if(tot2 == 0 || isnan(tot1) || isnan(tot2)){
+        return 0.0001;
     }
 
     tot1 = pow(tot1, 0.5);
@@ -104,11 +108,11 @@ gd(T)::solve_learning_rate(){
 }
 
 // ----------- PUBLIC -----------
-gd()::gradient_descent(function<T(T[])> func, int func_argument_count){
+gd()::gradient_descent(function<long double(long double[])> func, int func_argument_count){
     init(func, func_argument_count, DEFAULT_ITERATIONS);
 }
 
-gd()::gradient_descent(function<T(T[])> func, int func_argument_count, int iterations){
+gd()::gradient_descent(function<long double(long double[])> func, int func_argument_count, int iterations){
     init(func, func_argument_count, iterations);
 }
 
@@ -116,13 +120,13 @@ gd(void)::set_iterations(int iterations){
     this->iterations = iterations;
 }
 
-gd(void)::set_guess(T* guess){
+gd(void)::set_guess(long double* guess){
     for(int i = 0; i < num_args; ++i){
         this->guess[i] = guess[i];
     }
 }
 
-gd(void)::set_delta(T delta){
+gd(void)::set_delta(long double delta){
     this->delta = delta;
 }
 
@@ -134,8 +138,8 @@ gd(void)::set_min_or_max(bool min){
     this->min = min;
 }
 
-gd(vector<T>)::get_guess(){
-    vector<T> g(num_args);
+gd(vector<long double>)::get_guess(){
+    vector<long double> g(num_args);
     
     for(int i = 0; i < num_args; ++i){
         g[i] = guess[i];
@@ -144,9 +148,9 @@ gd(vector<T>)::get_guess(){
     return g;
 }
 
-gd(vector<T>)::run(){
-    vector<T> constants(guess);
-    T learning_rate = 0.1;
+gd(vector<long double>)::run(){
+    vector<long double> constants(guess);
+    long double learning_rate = 0.1;
 
     for(int i = 0; i < iterations; ++i){
         solve_gradient();
@@ -157,7 +161,7 @@ gd(vector<T>)::run(){
                 printf("learning_rate = %Lf\n", learning_rate);
             
             previous_guess[j] = guess[j];
-            guess[j] += (bmin ? -1 : 1) * gradient[j]*learning_rate;
+            guess[j] += (min ? -1 : 1) * gradient[j]*learning_rate;
         }
     }
 
@@ -169,11 +173,16 @@ function<long double(long double*)> MSE(int length_of_data, const long double* x
     return [length_of_data, x, y, func](long double args[]) -> long double {
         long double sum_of_error_squared = 0;
 
+        int count = 0;
         for(int i = 0; i < length_of_data; ++i){
+            if(isnan(pow(y[i] - func(x[i], args), 2))) continue;
+            // cout << i << ", " << x[i][0] << " is " << y[i] << ", " << func(x[i], args) << 
+            // ", " << pow(y[i] - func(x[i], args), 2) << "\n";
             sum_of_error_squared += pow(y[i] - func(x[i], args), 2);
+            count++;
         }
 
-        return sum_of_error_squared;
+        return sum_of_error_squared / count;
     };
 }
 

@@ -32,13 +32,23 @@ void test_super_exponential(int n);
 void test_exponential(double pow, int n);
 
 int main(void){
-    time_complexity tc(5000, 100, false);
+    time_complexity tc(5000, 100);
+    tc.verbose = false;
+    tc.show_gradient = false;
+    tc.show_possible_big_o = true;
     unsigned int s;
     srand(s);
-    for(int i = 0; i < 20; ++i){
-        double scale = rand() % 200 + 1;
-        scale /= (rand() % 400 + 200);
-        // double scale = 1;
+
+    int size = 20;
+    double val = 0.25;
+    double step = 0.25;
+    double scales[size];
+    for(int i = 0; i < size; ++i, val += step){
+        scales[i] = val;
+    }
+
+    for(int i = 0; i < size; ++i){
+        double scale = scales[i];
         cout << "Scale: " << scale << "\n";
         tc.compute_complexity("Constant", scaled_constant(scale), "O(1)");
         tc.compute_complexity("Log", scaled_logarithmic(scale), "O(log n)");

@@ -1,4 +1,0 @@
-Scale: 7.3375
-[5.000s] Constant                       Guess: O(1)                   OK                  
-Increase total budget.
-. Too few values collected.
