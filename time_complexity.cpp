@@ -166,7 +166,6 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
     oss << "\n";
 
     int c = 0;
-    auto it_begin = dds.begin();
 
     double normalize_vals[num_functions];
     for(int i = 0; i < num_functions; ++i){
@@ -261,7 +260,6 @@ long double time_complexity::sigmoid(long double x){
 // find an appropriate given the total_budget and computational_budget
 tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
     int jmp;
-    int af, bf, duration1, duration2;
     int max_jmp = 10000000;
     int jmp_factor = 2;
     jmp = jmp_factor;
@@ -312,7 +310,7 @@ time_complexity::time_complexity(int millisecond_total_budget, int millisecond_c
 bool time_complexity::compute_complexity(string name, function<void(int)> func, string expected_complexity){
     int st, end, jmp;
     tie(st, end, jmp) = find_interval(func);
-    char* s;
+    char s[40];
     sprintf(s, "Interval: [%d, %d), Jump = %d", st, end, jmp);
     if(verbose) cout << (string) s << "\n";
 

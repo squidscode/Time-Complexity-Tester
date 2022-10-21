@@ -1,18 +1,25 @@
 GCC= g++
 FLAGS= -g -o $@ -std=c++11
-SRCS= $(wildcard *.cpp)
+SRCS= $(wildcard ./test/*/main.cpp)
+DEST= $(patsubst ./test/%/main.cpp,./executables/%.exe,$(SRCS))
+OBJS= $(patsubst ./test/%/main.cpp,./object-files/%.o, $(SRCS))
 
-all: time_complexity.o gradient_descent.o 
+all: compile-object-files $(DEST)
 
-%: %.cpp
-	g++ -std=c++11 -Wall -o ./object-files/$< -g time_complexity.cpp test/time_test_functions.cpp
+./executables/%.exe: ./object-files/%.o
+	g++ -o $@ $< ./object-files/time_complexity.o ./object-files/gradient_descent.o
 
-PHONY: clean test compile
+./object-files/%.o: ./test/%/main.cpp
+	g++ -std=c++11 -c -Wall -o $@ $<	 
 
-compile:
-	make clean; make all;
+PHONY: clean test compile-object-files
+
+compile-object-files:
+	g++ -std=c++11 -c -Wall -o ./object-files/time_complexity.o time_complexity.cpp
+	g++ -std=c++11 -c -Wall -o ./object-files/gradient_descent.o gradient_descent/gradient_descent.cpp
 
 clean:
-	rm time_test_functions;
+	rm -rfv ./object-files/*.o;
+	rm -rfv ./executables/*.exe;
 
 test:

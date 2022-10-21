@@ -1,7 +1,7 @@
 #include <math.h>
 #include <chrono>
 #include <thread>
-#include "../time_complexity.h"
+#include "../../time_complexity.h"
 
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
@@ -36,7 +36,7 @@ int main(void){
     tc.verbose = false;
     tc.show_gradient = false;
     tc.show_possible_big_o = true;
-    unsigned int s;
+    unsigned int s = 0;
     srand(s);
 
     int size = 20;
@@ -62,27 +62,11 @@ int main(void){
         tc.compute_complexity("S_Exp", scaled_super_exponential(scale), "O(n^n)");
         cout << "\n";
     }
-
-    // time_complexity tc(3000, 20, false);
-    // tc.compute_complexity("Constant Function", test_constant, "O(1)");
-    // tc.compute_complexity("Logarithmic Function", test_logarithmic, "O(log n)");
-    // tc.compute_complexity("SQRT Function", test_sqrt, "O(sqrt(n))");
-    // tc.compute_complexity("Linear Function", test_linear, "O(n)");
-    // tc.compute_complexity("Linear x Logarithmic Function", test_linearxlog, "O(n log n)");
-    // tc.compute_complexity("Quadratic", test_quadratic, "O(n^2)");
-    // tc.compute_complexity("Cubic", test_cubic, "O(n^3)");
-    // tc.compute_complexity("1.5^n Function", [](int n) -> void {return test_exponential(1.5, n);}, "O(1.5^n)");
-    // tc.compute_complexity("1.7^n Function", [](int n) -> void {return test_exponential(1.7, n);}, "O(1.5^n)");
-    // tc.compute_complexity("1.9^n Function", [](int n) -> void {return test_exponential(1.9, n);}, "O(1.5^n)");
-    // tc.compute_complexity("2^n Function", [](int n) -> void {return test_exponential(2.001, n);}, "O(2^n)");
-    // tc.compute_complexity("2^n Function", test_exponentialx2, "O(2^n)");
-    // tc.compute_complexity("3^n Function", [](int n) -> void {return test_exponential(3, n);}, "O(2^n)");
-    // tc.compute_complexity("n^n Function", test_super_exponential, "O(n^n)");
 }
 
 
 function<void(int)> scaled_constant(double scale){
-    return [scale](int n) -> void{sl(10);};
+    return [scale](int n) -> void{sl(scale*10);};
 }
 
 function<void(int)> scaled_logarithmic(double scale){
