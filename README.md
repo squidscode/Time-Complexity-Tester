@@ -243,17 +243,17 @@ tc.compute_complexity("Fast Doubling Fibonacci", repeat(fibonacci3, 1000000));
 ...results in:
 ```
 Possible Big O functions: 
-  - O(1) : (a = 0.99999, error = 0.00000) 
-  - O(log n) : (a = 0.09467, error = 0.00048) 
-  - O(sqrt(n)) : (a = 0.02561, error = 0.00054) 
-  - O(n) : (a = 0.00122, error = 0.00004) 
-  - O(n log n) : (a = 0.00026, error = 0.00001) 
-  - O(n^2) : (a = 0.00003, error = 0.00000) 
-  - O(n^3) : (a = -0.00001, error = 0.00000) 
-  - O(1.5^n) : (a = -0.00000, error = 0.00000) 
-  - O(2^n) : (a = -0.00001, error = 0.00000) 
-  - O(n^n) : (a = -0.00002, error = 0.00000) 
-[5.014s, n = 5000] Fast Doubling Fibonacci                  Guess: Θ(1)                  
+  - O(1) : (a = 1.40598, error = 0.00239) 
+  - O(log n) : (a = 0.25844, error = 0.00148) 
+  - O(sqrt(n)) : (a = 0.20374, error = 0.00265) 
+  - O(n) : (a = 0.03839, error = 0.00119) 
+  - O(n log n) : (a = 0.02670, error = 0.00619) 
+  - O(n^2) : (a = 0.00343, error = 0.00010) 
+  - O(n^3) : (a = 0.00065, error = 0.00001) 
+  - O(1.5^n) : (a = 0.02141, error = 0.00747) 
+  - O(2^n) : (a = 0.01052, error = 0.00316) 
+  - O(n^n) : (a = -0.00004, error = 0.00000) 
+[5.011s, n = 92] Fast Doubling Fibonacci                    Guess: Θ(1)
 ```
 *Weird!*
 We can try any of the methods listed above, but, sometimes, we just need to increase our time budget to realize a difference between O(1) and O(log n)

@@ -34,7 +34,7 @@ int main(void){
     test_correctness(fibonacci2);
     test_correctness(fibonacci3);
 
-    time_complexity tc(5000, 1);
+    time_complexity tc(5000, 10);
     // tc.verbose = true; // uncomment to show verbose output
 
     // EXAMPLE #1
@@ -43,8 +43,8 @@ int main(void){
 
     // EXAMPLE #2
     // tc.compute_complexity("DP Fibonacci", fibonacci2);
-    tc.compute_complexity("DP Fibonacci", repeat(fibonacci2, 1000000)); 
-    // tc.compute_complexity("DP Fibonacci", square(repeat(fibonacci2, 1000000)));
+    // tc.compute_complexity("DP Fibonacci", repeat(fibonacci2, 1000000)); 
+    tc.compute_complexity("DP Fibonacci", square(repeat(fibonacci2, 1000000)));
     // tc.compute_complexity("DP Fibonacci", pow2(fibonacci2));
 
     // EXAMPLE #3
