@@ -4,7 +4,7 @@
 
 We can use this class to determine the time complexity of many different types of functions by writing a unary function that takes an integer and *transforming* the input into a field in a larger multi-argument function (while holding all other variables constant).
 
-This program is capable of determining the difference between Big Omega, Θ(...), and Big O, O(...), and the user can write tests for either measure of time complexity.
+This program is capable of determining the difference between Big Theta, Θ(f(n)), and Big O, O(f(n)), and the user can write tests for either measure of time complexity.
 
 ## Example #1
 Let's try to determine the time complexity of the following function:
@@ -63,9 +63,9 @@ The same result!
 
 The problem is NOT our time complexity tester. Our ```fibonacci``` function simply grows **too rapidly** after we reach 1 ms. If, instead of testing our fibonacci function, we construct the following lambda and call the following test:
 ```
-auto repeat = [](function<void(int)> fn, int times) -> function<void(int)> {
-  return [times, &fn](int n) -> void {
-    for(int i = 0; i < times; ++i) fn(n);
+auto repeat = [](function<void(int)> fn, int a) -> function<void(int)> {
+  return [a, &fn](int n) -> void {
+    for(int i = 0; i < a; ++i) fn(n);
   };
 };
 
@@ -176,7 +176,101 @@ we get:
   - O(n^n) : (a = -0.00740, error = 0.00075) 
 [5.011s, n = 14] DP Fibonacci                               Guess: O(n^2)
 ```
-This suggests that our time complexity is O(n), NOT O(sqrt(n)), because if our time complexity was O(sqrt(n)) this test would return O(n).
+This suggests that our time complexity is O(n), NOT O(sqrt(n)), because this test would return O(n) if our function was O(sqrt(n)).
+
+*Note that this trick only works if you want to map a function to a faster growing function. We cannot reduce a function that runs in O(n) to one that runs in O(sqrt(n))! This trick can help us separate logarithmic functions from polynomial functions (see below).*
+
+## Example 3
+Lets go **all the way**.
+```
+// SOURCE: https://chunminchang.github.io/blog/post/calculating-fibonacci-numbers-by-fast-doubling
+int fibonacci3(int n)
+{
+  // The position of the highest bit of n.
+  // So we need to loop `h` times to get the answer.
+  // Example: n = (Dec)50 = (Bin)00110010, then h = 6.
+  //                               ^ 6th bit from right side
+  unsigned int h = 0;
+  for (unsigned int i = n ; i ; ++h, i >>= 1);
+
+  int a = 0; // F(0) = 0
+  int b = 1; // F(1) = 1
+  // There is only one `1` in the bits of `mask`. The `1`'s position is same as
+  // the highest bit of n(mask = 2^(h-1) at first), and it will be shifted right
+  // iteratively to do `AND` operation with `n` to check `n_j` is odd or even,
+  // where n_j is defined below.
+  for (unsigned int mask = 1 << (h - 1) ; mask ; mask >>= 1) { // Run h times!
+    // Let j = h-i (looping from i = 1 to i = h), n_j = floor(n / 2^j) = n >> j
+    // (n_j = n when j = 0), k = floor(n_j / 2), then a = F(k), b = F(k+1) now.
+    int c = a * (2 * b - a); // F(2k) = F(k) * [ 2 * F(k+1) – F(k) ]
+    int d = a * a + b * b;   // F(2k+1) = F(k)^2 + F(k+1)^2
+
+    if (mask & n) { // n_j is odd: k = (n_j-1)/2 => n_j = 2k + 1
+      a = d;        //   F(n_j) = F(2k + 1)
+      b = c + d;    //   F(n_j + 1) = F(2k + 2) = F(2k) + F(2k + 1)
+    } else {        // n_j is even: k = n_j/2 => n_j = 2k
+      a = c;        //   F(n_j) = F(2k)
+      b = d;        //   F(n_j + 1) = F(2k + 1)
+    }
+  }
+
+  return a;
+}
+```
+The code above uses the fast doubling formula for the fibonacci series to calculate the nth fibonacci number. When we run:
+```
+tc.compute_complexity("Fast Doubling Fibonacci", fibonacci3);
+```
+we get:
+```
+Possible Big O functions: 
+  - O(1) : (a = 0.99999, error = 0.00000) 
+  - O(log n) : (a = 0.09467, error = 0.00048) 
+  - O(sqrt(n)) : (a = 0.02562, error = 0.00054) 
+  - O(n) : (a = 0.00122, error = 0.00004) 
+  - O(n log n) : (a = 0.00026, error = 0.00001) 
+  - O(n^2) : (a = 0.00003, error = 0.00000) 
+  - O(n^3) : (a = -0.00001, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00000, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.014s, n = 4999] Fast Doubling Fibonacci                  Guess: Θ(1)
+```
+This seems familiar. Lets repeat our function a million times.
+```
+tc.compute_complexity("Fast Doubling Fibonacci", repeat(fibonacci3, 1000000));
+```
+...results in:
+```
+Possible Big O functions: 
+  - O(1) : (a = 0.99999, error = 0.00000) 
+  - O(log n) : (a = 0.09467, error = 0.00048) 
+  - O(sqrt(n)) : (a = 0.02561, error = 0.00054) 
+  - O(n) : (a = 0.00122, error = 0.00004) 
+  - O(n log n) : (a = 0.00026, error = 0.00001) 
+  - O(n^2) : (a = 0.00003, error = 0.00000) 
+  - O(n^3) : (a = -0.00001, error = 0.00000) 
+  - O(1.5^n) : (a = -0.00000, error = 0.00000) 
+  - O(2^n) : (a = -0.00001, error = 0.00000) 
+  - O(n^n) : (a = -0.00002, error = 0.00000) 
+[5.014s, n = 5000] Fast Doubling Fibonacci                  Guess: Θ(1)                  
+```
+*Weird!*
+We can try any of the methods listed above, but, sometimes, we just need to increase our time budget to realize a difference between O(1) and O(log n)
+```
+Possible Big O functions: 
+  - O(log n) : (a = 0.22389, error = 0.00071) 
+  - O(sqrt(n)) : (a = 0.15233, error = 0.00435) 
+  - O(n) : (a = 0.01915, error = 0.00173) 
+  - O(n log n) : (a = 0.00769, error = 0.00196) 
+  - O(n^2) : (a = 0.00075, error = 0.00003) 
+  - O(n^3) : (a = 0.00011, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00017, error = 0.00001) 
+  - O(2^n) : (a = 0.00008, error = 0.00000) 
+  - O(n^n) : (a = -0.00005, error = 0.00000) 
+[30.011s, n = 454] Fast Doubling Fibonacci                  Guess: O(log n)
+```
+*Note that O(sqrt(n)) and O(log n) grow similarly according to the algorithm. Be careful when using composition functions in order to determine the difference between the two. **The best way to increase the accuracy is to use the repeat composition and by increasing the time budget***.
 
 ## Documentation
 The time complexity class is constructed via: 
