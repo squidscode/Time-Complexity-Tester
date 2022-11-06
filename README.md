@@ -41,7 +41,7 @@ Does our "Recursive Fibonacci" function run in O(log n) time?? Probably not! Our
 
 Take a look at the number of data points our program has collected (indicated as ```n = ...```). We have only ran our fibonacci function **three times**! These results indicate that we need to increase the total amount of time that we run our time complexity tester or we need to decrease the computation budget (when we begin collecting our data points). 
 
-If we chose to increase the total time budget (ie. how long we ran our test), we guarantee a more accurate result. Running the test for 60 seconds gets us:
+If we choose to increase the total time budget (ie. how long we ran our test), we guarantee a more accurate result. Running the test for 60 seconds gets us:
 ```
 Possible Big O functions: 
   - O(1.5^n) : (a = -0.01169, error = 0.00021) 
