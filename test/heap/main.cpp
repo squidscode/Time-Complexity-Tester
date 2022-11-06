@@ -9,7 +9,7 @@
 #include <utility>
 #include <vector>
 #include <map>
-#include "time_complexity.cpp"
+#include "../../time_complexity.h"
 #define get_time duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count()
 
 using namespace std;
@@ -18,8 +18,9 @@ using std::chrono::milliseconds;
 using std::chrono::system_clock;
 
 void test(function<bool(int, int)> comp, int);
-bool omega_test(function<void(int)>, vector<ft_t>, int, int, int);
-void test_push_back(int n);
+bool omega_test(function<void(int)>, vector<function_type_t>, int, int, int);
+void test_push_back_worst_case(int n);
+void test_push_back_best_case(int n);
 void test_constantc(int n);
 void test_linearc(int n);
 
@@ -138,11 +139,15 @@ int main(void){
     test([](int x, int y) -> bool {return x > y;}, 100000);
     function<void(int)> test_func = [](int n)->void{test([](int x, int y) -> bool {return x < y;}, n);};
 
-    time_complexity tc(10000, 100, false);
-    tc.compute_complexity("Test Func", test_func);
-    tc.compute_complexity("Linear", test_linearc);
-    tc.compute_complexity("Push Back", test_push_back);
-    tc.compute_complexity("Constant", test_constantc);
+
+
+    time_complexity tc(10000, 100);
+    cout << "Convergence error = 0.01 (default), tc(10000, 100)\n";
+    tc.compute_complexity("Unknown test function", test_func, "O(n log n)");
+    tc.compute_complexity("vector.push_back(rand)", test_linearc, "O(n)");
+    tc.compute_complexity("heap.push_back(decreasing)", test_push_back_worst_case, "O(1)"); // should be log n, but it generally performs better than log n
+    tc.compute_complexity("heap.push_back(increasing)", test_push_back_best_case);
+    tc.compute_complexity("Constant # of heap.push_back", test_constantc, "O(n)");
 }
 
 void test_linearc(int n){
@@ -154,15 +159,27 @@ void test_linearc(int n){
     }
 }
 
-void test_push_back(int n){
+void test_push_back_worst_case(int n){
     srand(10);
 
     function<bool(int,int)> comp = [](int x, int y) -> bool {return x < y;};
     heap<int> mh(comp, 500000);
 
-    // cout << "adding random elements: " << endl;
+    // Claim: worst case is when the values are decreasing:
     for(int i = 0; i < n; ++i){
-        mh.push(rand() % 1000000);
+        mh.push(n - i);
+    }
+}
+
+void test_push_back_best_case(int n){
+    srand(10);
+
+    function<bool(int,int)> comp = [](int x, int y) -> bool {return x < y;};
+    heap<int> mh(comp, 500000);
+
+    // Claim: best case is when the values are increasing:
+    for(int i = 0; i < n; ++i){
+        mh.push(i);
     }
 }
 

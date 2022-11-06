@@ -137,7 +137,9 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
         if(total_budget < total_time) break;
 
         // Print test information if verbose is true.
-        if(verbose) cout << left << "\n(n:" << setw(5) << i << ", Time:" << setw(7) << (double) duration / 1000 << "s)";
+        if(verbose){
+            cout << left << "\n(n:" << setw(5) << i << ", Time:" << setw(7) << (double) duration / 1000 << "s)";
+        }
     }
 
     if(verbose) cout << "\n\nTotal time: " << (double) (total_time + preprocessing_time) / 1000 << "\n\n";
@@ -228,11 +230,15 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
         grd.set_verbose(false);
         long double first_guess[2] = {vals[i][vals[i].size() - 1].ratio, (long double) 0};
         grd.set_guess(first_guess);
-        if(show_gradient) cout << left << setw(15) << fs[i].name << setprecision(5) << "Initial guess: " << setw(14) << grd.get_guess()[0] << ", " << setw(14) << grd.get_guess()[1];
+
+        char buf[29];
+        sprintf(buf, "(%.5Lf, %.5Lf)", grd.get_guess()[0], grd.get_guess()[1]);
+        if(show_gradient) cout << left << setw(15) << fs[i].name << setprecision(5) << "Initial guess: " << setw(30) << buf;
         grd.run();
-        if(show_gradient) cout << " After: " << setw(14) << grd.get_guess()[0] << ", " << setw(14) << grd.get_guess()[1];
+        sprintf(buf, "(%.5Lf, %.5Lf)", grd.get_guess()[0], grd.get_guess()[1]);
+        if(show_gradient) cout << right << setw(20) << " After: " << left << setw(30) << buf;
         long double error = mse(&grd.get_guess()[0]);
-        if(show_gradient) cout << right << setw(20) << "Error: " << left << setw(14) << error << "\n";
+        if(show_gradient) cout << right << setw(20) << "Error: " << left << setw(15) << error << "\n";
 
         // if the error is low enough, we conclude that the ratio converges:
         if(error < convergence_error){
@@ -294,7 +300,7 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
 
 // ------------------------ PUBLIC ------------------------
 // Constructor
-time_complexity::time_complexity(int millisecond_total_budget, int millisecond_computation_budget, vector<ft_t> fs){
+time_complexity::time_complexity(int millisecond_total_budget, int millisecond_computation_budget, vector<function_type_t> fs){
     this->fs = fs;
     this->total_budget = millisecond_total_budget;
     this->computation_budget = millisecond_computation_budget;
@@ -308,6 +314,11 @@ time_complexity::time_complexity(int millisecond_total_budget, int millisecond_c
 
 // we need to find the intervals for the omega_test function.
 bool time_complexity::compute_complexity(string name, function<void(int)> func, string expected_complexity){
+    if(expected_complexity.size() != 0 && expected_complexity[0] != 'T' && expected_complexity[0] != 'O'){
+        printf("Invalid time complexity guess: %s\n", expected_complexity.c_str());
+        printf("Time complexity guess must start with either \'O\' or \'T\', representing Big-O and Big-Theta tests, respectively.\n");
+    }
+    
     int st, end, jmp;
     tie(st, end, jmp) = find_interval(func);
     char s[40];
@@ -325,22 +336,39 @@ bool time_complexity::compute_complexity(string name, function<void(int)> func, 
         // We guess the last function that doesn't converge to zero (there is likely only one function like this).
         if(stats[i].a >= zero){
             guess_name = stats[i].name;
+            guess_name.erase(guess_name.begin());
+            guess_name = "\u0398" + guess_name;
         }
+    }
+
+    if(guess_name == "NOT FOUND" && stats.size() != 0){
+        guess_name = stats[0].name; // take the lowest big O.
     }
 
     sprintf(s, "[%.3fs, n = %lu]", (double) (total_time + preprocessing_time) / 1000, dds.size());
 
-    assert(guess_name.length() > 0);
     assert(expected_complexity == "" || expected_complexity.length() > 0);
-
-    if(guess_name != "NOT FOUND") guess_name.erase(guess_name.begin());
-    expected_complexity.erase(expected_complexity.begin());
-    if(guess_name != "NOT FOUND") guess_name = "\u0398" + guess_name;
-    expected_complexity = "\u0398" + expected_complexity;
 
     cout << setprecision(3) << left << setw(60) << ((string) s + " " + name) << setw(30) << ("Guess: " + guess_name);
     if(expected_complexity != ""){
-        cout << setw(20) << ((expected_complexity == guess_name) ? "OK": ("NO -- EXPECTED " + expected_complexity));
+        if(expected_complexity[0] == 'T'){
+            expected_complexity.erase(expected_complexity.begin());
+            expected_complexity = "\u0398" + expected_complexity;
+            cout << setw(30) << ((expected_complexity == guess_name) ? "OK": ("NO -- EXPECTED " + expected_complexity)) << "\n";
+            return expected_complexity == guess_name;
+        }else if(expected_complexity[0] == 'O'){
+            bool bigO = false;
+            for(int i = 0; i < stats.size(); ++i){
+                if(expected_complexity == stats[i].name){
+                    bigO = true;
+                    break;
+                }
+            }
+
+            // only print "bounded by" message when our guess is also writting in big-O.
+            cout << setw(30) << ((bigO) ? ((expected_complexity == guess_name || guess_name[0] != 'O') ? "OK" : "OK [Bounded by: " + expected_complexity + "]") : ("NO -- EXPECTED " + expected_complexity)) << "\n";
+            return bigO;
+        }
     }
     cout << "\n";
 
@@ -350,61 +378,61 @@ bool time_complexity::compute_complexity(string name, function<void(int)> func, 
 
 // ------------------------ OTHER FUNCTIONS ------------------------
 
-vector<ft_t> default_functions() {
-    vector<ft_t> functions;
+vector<function_type_t> default_functions() {
+    vector<function_type_t> functions;
 
-    ft_t constant;
+    function_type_t constant;
     constant.name = "O(1)";
     constant.function_base = [](int n, int st, int end)->long double {return 1;};
     functions.push_back(constant); 
 
-    ft_t logarithmic;
+    function_type_t logarithmic;
     logarithmic.name = "O(log n)";
     logarithmic.function_base = [](int n, int st, int end)->long double {return log(n);};
     functions.push_back(logarithmic); 
 
-    ft_t sqrt;
+    function_type_t sqrt;
     sqrt.name = "O(sqrt(n))";
     sqrt.function_base = [](int n, int st, int end)->long double {return pow(n, 0.5);};
     functions.push_back(sqrt); 
 
-    ft_t linear;
+    function_type_t linear;
     linear.name = "O(n)";
     linear.function_base = [](int n, int st, int end)->long double {return n;};
     functions.push_back(linear); 
 
-    ft_t linearxlogarithmic;
+    function_type_t linearxlogarithmic;
     linearxlogarithmic.name = "O(n log n)";
     linearxlogarithmic.function_base = [](int n, int st, int end)->long double {return n != 1 ? n * log(n) : 1;};
     functions.push_back(linearxlogarithmic); 
 
-    ft_t quadratic;
+    function_type_t quadratic;
     quadratic.name = "O(n^2)";
     quadratic.function_base = [](int n, int st, int end)->long double {return n <= pow(INT_MAX, 0.5) ? n * n: INFINITY;}; // normalized n^2 function
     functions.push_back(quadratic); 
 
-    ft_t cubic;
+    function_type_t cubic;
     cubic.name = "O(n^3)";
     cubic.function_base = [](int n, int st, int end)->long double {
         return n <= pow(INT_MAX, 0.332) ? n * n * n: INFINITY;
     };
     functions.push_back(cubic); 
 
-    ft_t exponentialxhalf;
+    function_type_t exponentialxhalf;
     exponentialxhalf.name = "O(1.5^n)";
     exponentialxhalf.function_base = [](int n, int st, int end)->long double {
         return n <= log(INT_MAX)/log(1.51) ? pow(1.5, n) : INFINITY;
     };
     functions.push_back(exponentialxhalf); 
 
-    ft_t exponentialx2;
+    function_type_t exponentialx2;
     exponentialx2.name = "O(2^n)";
     exponentialx2.function_base = [](int n, int st, int end)->long double {
         return (long long) n <= log(INT_MAX)/log(2.01) ? pow(2, n) : INFINITY;
     };
     functions.push_back(exponentialx2); 
 
-    ft_t super_exponential;
+    function_type_t super_exponential;
     super_exponential.name = "O(n^n)";
     super_exponential.function_base = [](int n, int st, int end)->long double {
         if(st > 4) n /= st;

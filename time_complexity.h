@@ -19,7 +19,7 @@ using namespace std;
 typedef struct functiontype{
     string name;
     function<long double(int, int, int)> function_base;
-} ft_t;
+} function_type_t;
 
 typedef struct duration_data{
     int n;
@@ -37,7 +37,7 @@ typedef struct convergence_data{
     long double error;
 } convergence_data_t;
 
-vector<ft_t> default_functions();
+vector<function_type_t> default_functions();
 
 class time_complexity{
 private:
@@ -45,7 +45,7 @@ private:
     int computation_budget;
     long long total_time;
     long long preprocessing_time;
-    vector<ft_t> fs;
+    vector<function_type_t> fs;
     vector<dd_t> dds;
     vector<vector<long double>> ratios;
     vector<vector<long double>> dratios;
@@ -69,7 +69,7 @@ public:
     long double convergence_error = 0.01; 
     // if a ratio converges to a value below this, we will assume it converges to 0.
     long double zero = 0.3; 
-    time_complexity(int millisecond_total_budget, int millisecond_computation_budget, vector<ft_t> fs=default_functions());
+    time_complexity(int millisecond_total_budget, int millisecond_computation_budget, vector<function_type_t> fs=default_functions());
     bool compute_complexity(string name, function<void(int)> func, string expected_complexity="");
 };
 
