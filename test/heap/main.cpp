@@ -24,6 +24,13 @@ void test_push_back_best_case(int n);
 void test_constantc(int n);
 void test_linearc(int n);
 
+// repeats fn a times.
+auto repeat = [](function<void(int)> fn, int a) -> function<void(int)> {
+    return [a, &fn](int n) -> void {
+        for(int i = 0; i < a; ++i) fn(n);
+    };
+};
+
 // class T must override the < and > operators in order for min_heap to work.
 template<class T> class heap{
     private:
@@ -145,7 +152,7 @@ int main(void){
     cout << "Convergence error = 0.01 (default), tc(10000, 100)\n";
     tc.compute_complexity("Unknown test function", test_func, "O(n log n)");
     tc.compute_complexity("vector.push_back(rand)", test_linearc, "O(n)");
-    tc.compute_complexity("heap.push_back(decreasing)", test_push_back_worst_case, "O(1)"); // should be log n, but it generally performs better than log n
+    tc.compute_complexity("heap.push_back(decreasing)", repeat(test_push_back_worst_case, 1000), "O(1)"); // should be log n, but it generally performs better than log n
     tc.compute_complexity("heap.push_back(increasing)", test_push_back_best_case);
     tc.compute_complexity("Constant # of heap.push_back", test_constantc, "O(n)");
 }

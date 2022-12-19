@@ -38,18 +38,18 @@ int main(void){
     // tc.verbose = true; // uncomment to show verbose output
 
     // EXAMPLE #1
-    // tc.compute_complexity("Recursive Fibonacci", fibonacci);
-    tc.compute_complexity("Recursive Fibonacci", repeat(fibonacci, 1000000));
+    tc.compute_complexity("Recursive Fibonacci", fibonacci);
+    tc.compute_complexity("Recursive Fibonacci (repeat x 1000000)", repeat(fibonacci, 1000000));
 
     // EXAMPLE #2
-    // tc.compute_complexity("DP Fibonacci", fibonacci2);
-    // tc.compute_complexity("DP Fibonacci", repeat(fibonacci2, 1000000)); 
-    tc.compute_complexity("DP Fibonacci", square(repeat(fibonacci2, 1000000)));
-    // tc.compute_complexity("DP Fibonacci", pow2(fibonacci2));
+    tc.compute_complexity("DP Fibonacci", fibonacci2);
+    tc.compute_complexity("DP Fibonacci (repeat)", repeat(fibonacci2, 1000000)); 
+    tc.compute_complexity("DP Fibonacci (square + repeat)", square(repeat(fibonacci2, 1000000)));
+    tc.compute_complexity("DP Fibonacci (pow2)", pow2(fibonacci2));
 
     // EXAMPLE #3
-    // tc.compute_complexity("Fast Doubling Fibonacci", fibonacci3);
-    tc.compute_complexity("Fast Doubling Fibonacci", repeat(fibonacci3, 1000000));
+    tc.compute_complexity("Fast Doubling Fibonacci", fibonacci3);
+    tc.compute_complexity("Fast Doubling Fibonacci (repeat)", repeat(fibonacci3, 1000000));
     
 }
 

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <chrono>
 #include <thread>
+#include <functional>
 #include "../../time_complexity.h"
 
 using std::chrono::duration_cast;
@@ -13,7 +14,8 @@ using std::chrono::microseconds;
 
 #define sl(x) std::this_thread::sleep_for(std::chrono::milliseconds((int) (x)));
 
-void generic_tester(int n1, int n2, int n3, int n4, int n5, bool b1, bool b2, bool verbose, bool show_gradient);
+void generic_tester(int n1, int n2, int n3, double n4, double n5, bool b1, bool b2, bool verbose, bool show_gradient,
+    function<function<void(int)>(function<void(int)>)> comp);
 
 function<void(int)> scaled_constant(double scale);
 function<void(int)> scaled_logarithmic(double scale);
@@ -36,6 +38,13 @@ void test_exponentialx2(int n);
 void test_super_exponential(int n);
 void test_exponential(double pow, int n);
 
+// repeats fn a times.
+auto repeat = [](function<void(int)> fn, int a) -> function<void(int)> {
+    return [a, &fn](int n) -> void {
+        for(int i = 0; i < a; ++i) fn(n);
+    };
+};
+
 void print_help(){
     cout << "\tgeneric_tester [-ghvOT] NUM-1 NUM-2 NUM-3 NUM-4 NUM-5\n\n";
     cout << "FLAGS:\n";
@@ -56,13 +65,22 @@ int main(int argc, char** argv){
     bool verbose = false; bool show_gradient = false;
     bool b[2];
     b[0] = true; b[1] = true;
-    int n[5]; int n_ind = 0; // the numbers
+    double n[5]; int n_ind = 0; // the numbers
     
     for(int i = 1; i < argc; ++i){
         istringstream iss(argv[i]);
 
         if(argv[i][0] == '-'){
             int n = strlen(argv[i]);
+            if(1 < n && argv[i][1] == 'r'){
+                ++i;
+                if(i >= argc){
+                    print_help();
+                    exit(0);
+                }else{
+
+                }
+            }
             for(int j = 1; j < n; ++j){
                 switch(argv[i][j]){
                 case 'g':
@@ -112,7 +130,8 @@ int main(int argc, char** argv){
     generic_tester(n[0], n[1], n[2], n[3], n[4], b[0], b[1], verbose, show_gradient);
 }
 
-void generic_tester(int n1, int n2, int n3, int n4, int n5, bool b1, bool b2, bool verbose, bool show_gradient){
+void generic_tester(int n1, int n2, int n3, double n4, double n5, bool b1, bool b2, bool verbose, bool show_gradient,
+    function<function<void(int)>(function<void(int)>)> comp){
     time_complexity tc(n1, n2);
     tc.verbose = verbose;
     tc.show_gradient = show_gradient;
@@ -130,18 +149,20 @@ void generic_tester(int n1, int n2, int n3, int n4, int n5, bool b1, bool b2, bo
         cout << "Testing Big O:\n\n"; 
         for(int i = 0; i < size; ++i){
             double scale = scales[i];
-            string db = to_string(scale);
+            char buf[20];
+            sprintf(buf, "O[%d, %d, %.2f]", n1, n2, scale);
+            string db = buf;
             cout << "Scale: " << scale << "\n";
-            tc.compute_complexity("Constant [" + db + "]", scaled_constant(scale), "O(1)");
-            tc.compute_complexity("Log [" + db + "]", scaled_logarithmic(scale), "O(log n)");
-            tc.compute_complexity("Sqrt [" + db + "]", scaled_sqrt(scale), "O(sqrt(n))");
-            tc.compute_complexity("Linear [" + db + "]", scaled_linear(scale), "O(n)");
-            tc.compute_complexity("Linearxlog [" + db + "]", scaled_linearxlog(scale), "O(n log n)");
-            tc.compute_complexity("Quadratic [" + db + "]", scaled_quadratic(scale), "O(n^2)");
-            tc.compute_complexity("Cubic [" + db + "]", scaled_cubic(scale), "O(n^3)");
-            tc.compute_complexity("Exp [" + db + "]", scaled_exponential(scale, 1.51), "O(1.5^n)");
-            tc.compute_complexity("Exp [" + db + "]", scaled_exponential(scale, 2.01), "O(2^n)");
-            tc.compute_complexity("S_Exp [" + db + "]", scaled_super_exponential(scale), "O(n^n)");
+            tc.compute_complexity("Constant " + db, scaled_constant(scale), "O(1)");
+            tc.compute_complexity("Log " + db, scaled_logarithmic(scale), "O(log n)");
+            tc.compute_complexity("Sqrt " + db, scaled_sqrt(scale), "O(sqrt(n))");
+            tc.compute_complexity("Linear " + db, scaled_linear(scale), "O(n)");
+            tc.compute_complexity("Linearxlog " + db, scaled_linearxlog(scale), "O(n log n)");
+            tc.compute_complexity("Quadratic " + db, scaled_quadratic(scale), "O(n^2)");
+            tc.compute_complexity("Cubic " + db, scaled_cubic(scale), "O(n^3)");
+            tc.compute_complexity("1.5 Exp " + db, scaled_exponential(scale, 1.51), "O(1.5^n)");
+            tc.compute_complexity("2.0 Exp " + db, scaled_exponential(scale, 2.01), "O(2^n)");
+            tc.compute_complexity("S_Exp " + db, scaled_super_exponential(scale), "O(n^n)");
             cout << "\n";
         }
         if(b2) cout << "\n\n";
@@ -151,18 +172,20 @@ void generic_tester(int n1, int n2, int n3, int n4, int n5, bool b1, bool b2, bo
         cout << "Testing Big Theta:\n\n";
         for(int i = 0; i < size; ++i){
             double scale = scales[i];
-            string db = to_string(scale);
+            char buf[20];
+            sprintf(buf, "T[%d, %d, %.2f]", n1, n2, scale);
+            string db = buf;
             cout << "Scale: " << scale << "\n";
-            tc.compute_complexity("Constant [" + db + "]", scaled_constant(scale), "T(1)");
-            tc.compute_complexity("Log [" + db + "]", scaled_logarithmic(scale), "T(log n)");
-            tc.compute_complexity("Sqrt [" + db + "]", scaled_sqrt(scale), "T(sqrt(n))");
-            tc.compute_complexity("Linear [" + db + "]", scaled_linear(scale), "T(n)");
-            tc.compute_complexity("Linearxlog [" + db + "]", scaled_linearxlog(scale), "T(n log n)");
-            tc.compute_complexity("Quadratic [" + db + "]", scaled_quadratic(scale), "T(n^2)");
-            tc.compute_complexity("Cubic [" + db + "]", scaled_cubic(scale), "T(n^3)");
-            tc.compute_complexity("Exp [" + db + "]", scaled_exponential(scale, 1.51), "T(1.5^n)");
-            tc.compute_complexity("Exp [" + db + "]", scaled_exponential(scale, 2.01), "T(2^n)");
-            tc.compute_complexity("S_Exp [" + db + "]", scaled_super_exponential(scale), "T(n^n)");
+            tc.compute_complexity("Constant " + db, scaled_constant(scale), "T(1)");
+            tc.compute_complexity("Log " + db, scaled_logarithmic(scale), "T(log n)");
+            tc.compute_complexity("Sqrt " + db, scaled_sqrt(scale), "T(sqrt(n))");
+            tc.compute_complexity("Linear " + db, scaled_linear(scale), "T(n)");
+            tc.compute_complexity("Linearxlog " + db, scaled_linearxlog(scale), "T(n log n)");
+            tc.compute_complexity("Quadratic " + db, scaled_quadratic(scale), "T(n^2)");
+            tc.compute_complexity("Cubic " + db, scaled_cubic(scale), "T(n^3)");
+            tc.compute_complexity("1.5 Exp " + db, scaled_exponential(scale, 1.51), "T(1.5^n)");
+            tc.compute_complexity("2.0 Exp " + db, scaled_exponential(scale, 2.01), "T(2^n)");
+            tc.compute_complexity("S_Exp " + db, scaled_super_exponential(scale), "T(n^n)");
             cout << "\n";
         }
     }
