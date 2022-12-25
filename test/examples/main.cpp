@@ -28,28 +28,28 @@ auto pow2 = [](function<void(int)> fn) -> function<void(int)> {
     };
 };
 
-
 int main(void){
     test_correctness(fibonacci);
     test_correctness(fibonacci2);
     test_correctness(fibonacci3);
 
-    time_complexity tc(5000, 10);
+    time_complexity tc(5000);
+    tc.auto_interval = false;
     // tc.verbose = true; // uncomment to show verbose output
 
     // EXAMPLE #1
     tc.compute_complexity("Recursive Fibonacci", fibonacci);
-    tc.compute_complexity("Recursive Fibonacci (repeat x 1000000)", repeat(fibonacci, 1000000));
+    // tc.compute_complexity("Recursive Fibonacci (repeat x 1000000)", repeat(fibonacci, 1000));
 
-    // EXAMPLE #2
+    // // EXAMPLE #2
     tc.compute_complexity("DP Fibonacci", fibonacci2);
-    tc.compute_complexity("DP Fibonacci (repeat)", repeat(fibonacci2, 1000000)); 
-    tc.compute_complexity("DP Fibonacci (square + repeat)", square(repeat(fibonacci2, 1000000)));
-    tc.compute_complexity("DP Fibonacci (pow2)", pow2(fibonacci2));
+    tc.compute_complexity("DP Fibonacci (repeat)", repeat(fibonacci2, 1000)); 
+    // tc.compute_complexity("DP Fibonacci (square + repeat)", square(repeat(fibonacci2, 1000)));
+    // tc.compute_complexity("DP Fibonacci (pow2)", pow2(fibonacci2));
 
     // EXAMPLE #3
     tc.compute_complexity("Fast Doubling Fibonacci", fibonacci3);
-    tc.compute_complexity("Fast Doubling Fibonacci (repeat)", repeat(fibonacci3, 1000000));
+    tc.compute_complexity("Fast Doubling Fibonacci (repeat)", repeat(fibonacci3, 10000));
     
 }
 

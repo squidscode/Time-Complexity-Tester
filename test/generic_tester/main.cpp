@@ -14,8 +14,11 @@ using std::chrono::microseconds;
 
 #define sl(x) std::this_thread::sleep_for(std::chrono::milliseconds((int) (x)));
 
+// Generic tester function:
+function<function<void(int)>(function<void(int)>)> identity = 
+    [](function<void(int)> fn) -> function<void(int)> {return fn;};
 void generic_tester(int n1, int n2, int n3, double n4, double n5, bool b1, bool b2, bool verbose, bool show_gradient,
-    function<function<void(int)>(function<void(int)>)> comp);
+    function<function<void(int)>(function<void(int)>)> comp=identity);
 
 function<void(int)> scaled_constant(double scale);
 function<void(int)> scaled_logarithmic(double scale);
@@ -82,7 +85,7 @@ int main(int argc, char** argv){
                 }
             }
             for(int j = 1; j < n; ++j){
-                switch(argv[i][j]){
+            switch(argv[i][j]){
                 case 'g':
                     show_gradient = true;
                     break;
@@ -130,12 +133,14 @@ int main(int argc, char** argv){
     generic_tester(n[0], n[1], n[2], n[3], n[4], b[0], b[1], verbose, show_gradient);
 }
 
+
 void generic_tester(int n1, int n2, int n3, double n4, double n5, bool b1, bool b2, bool verbose, bool show_gradient,
     function<function<void(int)>(function<void(int)>)> comp){
     time_complexity tc(n1, n2);
     tc.verbose = verbose;
     tc.show_gradient = show_gradient;
     tc.show_possible_big_o = true; // default
+    tc.auto_interval = false; // default
 
     int size = n3;
     double val = n4;
@@ -197,7 +202,10 @@ function<void(int)> scaled_constant(double scale){
 }
 
 function<void(int)> scaled_logarithmic(double scale){
-    return [scale](int n) -> void{sl(scale * log(n));};
+    return [scale](int n) -> void{
+        if(n == 1) n++;
+        sl(scale * log2(n));
+    }; // NOTE: when n = 1, we use log(2) instead of log(1) bc log(1) = 0
 }
 
 function<void(int)> scaled_sqrt(double scale){
@@ -209,7 +217,10 @@ function<void(int)> scaled_linear(double scale){
 }
 
 function<void(int)> scaled_linearxlog(double scale){
-    return [scale](int n) -> void{sl(scale * n * log(n));};
+    return [scale](int n) -> void{
+        if(n == 1) n++;
+        sl(scale * n * log2(n));
+    }; // NOTE: when n = 1, we use log(2) instead of log(1) bc log(1) = 0
 }
 
 function<void(int)> scaled_quadratic(double scale){
