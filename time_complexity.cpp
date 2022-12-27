@@ -19,6 +19,8 @@
 #define get_time duration_cast<nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count()
 
 #define MIN_TABLE_VALUES 3
+#define DATA_BEFORE_DOUBLE 500
+#define DATA_CAP 10000
 #define GRADIENT_DESCENT_ITERATIONS 100
 #define min(x,y) (x < y ? x : y)
 
@@ -43,15 +45,17 @@ void time_complexity::init(){
 // returns 0 if the function runs within the given time budget,
 // 1 if the functions runs more time than the time budget.
 int time_complexity::run_func_with_budget(function<void(int)> func, int n, int budget){
+    // cout << n << " " << budget << "\n";
     pid_t child_pid;
+    int rv = 0;
 
     if((child_pid = fork()) != 0){  // parent
         // run while the child process is running
         long long start_time = get_time;
-        while(waitpid(child_pid, nullptr, WNOHANG) == 0){
-            if(get_time - start_time > (long long) budget * 1000000){
+        while(waitpid(child_pid, nullptr, WNOHANG) == 0 && rv == 0){
+            if(get_time - start_time > (long long) budget){
                 kill(child_pid, SIGKILL);
-                return 1;
+                rv = 1;
             }
         }
     }else{                          // child
@@ -59,7 +63,7 @@ int time_complexity::run_func_with_budget(function<void(int)> func, int n, int b
         exit(0);
     }
 
-    return 0;
+    return rv;
 }
 
 // Generate a unique file name:
@@ -148,8 +152,8 @@ restart:
     ostringstream oss;
 
     
-
-    for(int i = st; i < end; i += jmp){
+    // Protect against overflow
+    for(int i = st; i < end && i > 0; i += jmp){
         pid_t child_pid;
         bool ignore_duration = false;
         long long start_time = get_time;
@@ -210,6 +214,16 @@ restart:
         total_time += (end_time - start_time); // include process startup time
         count++;
         if(total_budget < total_time) break;
+
+        // Double the jump size each time we reach a power of 2
+        if(dds.size() % DATA_BEFORE_DOUBLE == 0){
+            jmp *= 2;
+        }
+
+        // If we reach the data cap, then we will break
+        if(dds.size() >= DATA_CAP){
+            break;
+        }
 
         // Print test information if verbose is true.
         if(verbose){
@@ -362,10 +376,10 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
         // run for the first interval.
         int first_interval = run_func_with_budget(func, jmp, computation_budget);
 
-        if(first_interval){
+        if(first_interval == 1){
             ppaf = get_time;
             preprocessing_time = ppaf - ppbf;
-            return {1, jmp/jmp_factor * total_budget / computation_budget * 10, jmp/jmp_factor};
+            return {jmp/jmp_factor, INT_MAX, jmp};
         }
             //return {1, jmp/jmp_factor * total_budget / computation_budget * 10, jmp/jmp_factor};
 
@@ -373,13 +387,12 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
     }
     
     // if we get here, the we never get past the computation_budget.
-    jmp = jmp_factor;
-    // cout << "[jmp overflow] ";
 
     // Get preprocessing time.
     ppaf = get_time;
     preprocessing_time = ppaf - ppbf;
-    return {1, jmp/jmp_factor * total_budget * 10, jmp/jmp_factor};
+    jmp = INT_MAX / (total_budget / 10000); // 1000 more possible points than the total_budget.
+    return {1, INT_MAX, (jmp <= 0 ? 1 : jmp)};
 }
 
 
@@ -413,12 +426,12 @@ bool time_complexity::compute_complexity(string name, function<void(int)> func, 
         tie(st, end, jmp) = find_interval(func);
     } else {
         preprocessing_time = 0; // since we do not preprocess.
-        tie(st, end, jmp) = tuple<int,int,int>{1, min(total_budget / 1000000, 100000), 1}; // a hard cap on the # of tests.
+        tie(st, end, jmp) = tuple<int,int,int>{1, INT_MAX, 1}; // a hard cap on the # of tests.
     }
 
     char s[40];
     sprintf(s, "Interval: [%d, %d), Jump = %d", st, end, jmp);
-    if(verbose) cout << (string) s << "\n";
+    if(show_interval) cout << (string) s << "\n";
 
     // Generate table
     complexity_table_generator(func, st, end, jmp);

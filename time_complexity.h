@@ -80,6 +80,7 @@ public:
    // Auto-Interval capabilities:
     bool auto_interval;
     // Different levels of verbose-ness:
+    bool show_interval{false};
     bool verbose;
     bool show_gradient;
     bool show_possible_big_o;

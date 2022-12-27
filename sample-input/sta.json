@@ -1,0 +1,1 @@
+{"name":"String_test_append", "budget": 5000,"code":"#include <string>\n\nusing namespace std;\n\n// ~TC-TEST~ String Append Test\nvoid test(int n){\n    string s(n, 'x');\n    string s2(n, 'y');\n\n    string add = s + s2;\n\n    return;\n}"}

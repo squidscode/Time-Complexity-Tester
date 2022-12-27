@@ -58,6 +58,8 @@ if __name__ == "__main__":
     # Attempt to parse through the file using json
     read_file = open(path, "r")
     data = json.load(read_file)
+    read_file.close()
+
     generate_scatterplot(path, data["data"])
 
 
