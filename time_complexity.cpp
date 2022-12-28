@@ -1,8 +1,10 @@
 #include "time_complexity.h"
 #include "./gradient_descent/gradient_descent.h"
+#include <sys/stat.h>
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
+#include <fstream>
 #include <functional>
 #include <sstream>
 #include <functional>
@@ -10,17 +12,21 @@
 #include <math.h>
 #include <vector>
 #include <unistd.h>
+#include <time.h>
 #include <cmath>
 #include <signal.h>
 #include <tuple>
-#define get_time duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count()
+#define get_time duration_cast<nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count()
 
 #define MIN_TABLE_VALUES 3
+#define DATA_BEFORE_DOUBLE 500
+#define DATA_CAP 10000
 #define GRADIENT_DESCENT_ITERATIONS 100
+#define min(x,y) (x < y ? x : y)
 
 using namespace std;
 using std::chrono::duration_cast;
-using std::chrono::milliseconds;
+using std::chrono::nanoseconds;
 using std::chrono::system_clock;
 using std::chrono::microseconds;
 
@@ -39,15 +45,17 @@ void time_complexity::init(){
 // returns 0 if the function runs within the given time budget,
 // 1 if the functions runs more time than the time budget.
 int time_complexity::run_func_with_budget(function<void(int)> func, int n, int budget){
+    // cout << n << " " << budget << "\n";
     pid_t child_pid;
+    int rv = 0;
 
     if((child_pid = fork()) != 0){  // parent
         // run while the child process is running
         long long start_time = get_time;
-        while(waitpid(child_pid, nullptr, WNOHANG) == 0){
-            if(get_time - start_time > budget){
+        while(waitpid(child_pid, nullptr, WNOHANG) == 0 && rv == 0){
+            if(get_time - start_time > (long long) budget){
                 kill(child_pid, SIGKILL);
-                return 1;
+                rv = 1;
             }
         }
     }else{                          // child
@@ -55,13 +63,82 @@ int time_complexity::run_func_with_budget(function<void(int)> func, int n, int b
         exit(0);
     }
 
-    return 0;
+    return rv;
+}
+
+// Generate a unique file name:
+string get_file_name(){
+    time_t rawtime;
+    struct tm* timeinfo;
+    char buf[80];
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    strftime(buf, 80, "%F-%T.json", timeinfo);
+
+    return buf;
+}
+
+void time_complexity::save_to_file(vector<rd_t> vals[], vector<guess_collection_t> guesses){
+    string dir = data_directory + "/" + current_test_name;
+    mkdir(dir.c_str(), 0744);
+
+    ofstream ofs = ofstream();
+    ofs.open(dir + "/" + get_file_name()); // create a new file with the given unique name (using current time)
+
+    int num_functions = fs.size();
+
+    // CREATE THE JSON FILE:
+    ofs << "{";
+
+    // Write guess:
+    ofs << "\"predictions\":{";
+
+    ofs << "\"function string\":\"" << FUNCTION_STR << "\",";
+    for(int function_num = 0; function_num < num_functions; ++function_num){ // for each function:
+        ofs << "\"" << fs[function_num].name << "\":{";
+        
+        ofs << "\"guess\":["
+            << guesses[function_num].a << ","
+            << guesses[function_num].b << ","
+            << guesses[function_num].c << ","
+            << guesses[function_num].d << "],";
+        ofs << "\"error\":" << guesses[function_num].error;
+
+        ofs << "}";
+        if(function_num < num_functions - 1) ofs << ",";
+    }
+    ofs << "},";
+
+    // Write data:
+    ofs << "\"data\":{";
+    for(int function_num = 0; function_num < num_functions; ++function_num){ // for each function:
+        ofs << "\"" << fs[function_num].name << "\":{";
+
+        ofs << "\"x\":[";
+        for(int i = 0; i < vals[function_num].size(); ++i){
+            ofs << vals[function_num][i].n;
+            if(i < vals[function_num].size() - 1) ofs << ",";
+        }
+        ofs << "],";
+        
+        ofs << "\"y\":[";
+        for(int i = 0; i < vals[function_num].size(); ++i){
+            ofs << vals[function_num][i].ratio;
+            if(i < vals[function_num].size() - 1) ofs << ",";
+        }
+        ofs << "]}";
+
+        if(function_num < num_functions - 1) ofs << ",";
+    }
+    ofs << "}";
+    ofs << "}";
 }
 
 // semi-open intervals [st, end) 
 void time_complexity::complexity_table_generator(function<void(int)> func, int st, int end, int jmp){
-    restart:
-
+restart:
     init();
 
     int num_functions = fs.size();
@@ -75,10 +152,12 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
     ostringstream oss;
 
     
-
-    for(int i = st; i < end; i += jmp){
+    // Protect against overflow
+    for(int i = st; i < end && i > 0; i += jmp){
         pid_t child_pid;
         bool ignore_duration = false;
+        long long start_time = get_time;
+        long long end_time;
 
         // fork
         child_pid = fork();
@@ -106,8 +185,6 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
             pid_t end_pid = 0;
             bool run = true;
             
-            long long start_time = get_time;
-
             while(run){
                 end_pid = waitpid(child_pid, status_ptr, WNOHANG);
                 if(end_pid == -1){
@@ -126,15 +203,27 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
                     ignore_duration = true;
                 }
             }
+
+            end_time = get_time;
         }
         
         if(ignore_duration) break;
 
         duration = af - bf;
         dds.push_back({i, duration});
-        total_time += duration;
+        total_time += (end_time - start_time); // include process startup time
         count++;
         if(total_budget < total_time) break;
+
+        // Double the jump size each time we reach a power of 2
+        if(dds.size() % DATA_BEFORE_DOUBLE == 0){
+            jmp *= 2;
+        }
+
+        // If we reach the data cap, then we will break
+        if(dds.size() >= DATA_CAP){
+            break;
+        }
 
         // Print test information if verbose is true.
         if(verbose){
@@ -198,7 +287,6 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
     }
 
     // ---------- FINDING MODEL ----------
-
     vector<rd_t> vals[num_functions];
     int max_sz = 0;
     for(int i = 0; i < num_functions; ++i){
@@ -221,11 +309,14 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
         }
     }
 
+    vector<guess_collection_t> guesses;
     for(int i = 0; i < num_functions; ++i){
         int start = vals[i][0].n;
         long double max_b = (long double) vals[i][vals[i].size() - 1].n / 5; // this will be passed in so that b stays within the range of 0 to this value
         function<long double(long double*)> mse = MSE(vals[i].size(), x[i], y[i], 
             [start, max_b](const long double* x, long double* args) -> long double {return convergence_function(x, args, start, max_b);});
+        
+        // GRADIENT DESCENT: Minimize the mean-squared-error of the given function (mse). mse takes 2 arguments.
         gradient_descent grd(mse, 2, GRADIENT_DESCENT_ITERATIONS);
         grd.set_verbose(false);
         long double first_guess[2] = {vals[i][vals[i].size() - 1].ratio, (long double) 0};
@@ -240,13 +331,21 @@ void time_complexity::complexity_table_generator(function<void(int)> func, int s
         long double error = mse(&grd.get_guess()[0]);
         if(show_gradient) cout << right << setw(20) << "Error: " << left << setw(15) << error << "\n";
 
+        guesses.push_back({grd.get_guess()[0], grd.get_guess()[1], start, max_b, error});
         // if the error is low enough, we conclude that the ratio converges:
         if(error < convergence_error){
             stats.push_back({fs[i].name, grd.get_guess()[0], error});
         }
     }
 
-    // free
+    if(save_data) save_to_file(vals, guesses);
+
+    // Free all allocated space.
+    for(int fn = 0; fn < num_functions; ++fn){
+        for(int j = 0; j < vals[fn].size(); ++j){
+            delete[] x[fn][j];
+        }
+    } 
 }
 
 // Represents a generic converging function. "c" represents the point (c, 1) that f(x) always intersects -- this will be a constant value that depends on
@@ -277,10 +376,10 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
         // run for the first interval.
         int first_interval = run_func_with_budget(func, jmp, computation_budget);
 
-        if(first_interval){
+        if(first_interval == 1){
             ppaf = get_time;
             preprocessing_time = ppaf - ppbf;
-            return {1, jmp/jmp_factor * total_budget / computation_budget * 10, jmp/jmp_factor};
+            return {jmp/jmp_factor, INT_MAX, jmp};
         }
             //return {1, jmp/jmp_factor * total_budget / computation_budget * 10, jmp/jmp_factor};
 
@@ -288,13 +387,12 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
     }
     
     // if we get here, the we never get past the computation_budget.
-    jmp = jmp_factor;
-    // cout << "[jmp overflow] ";
 
     // Get preprocessing time.
     ppaf = get_time;
     preprocessing_time = ppaf - ppbf;
-    return {1, jmp/jmp_factor * total_budget * 10, jmp/jmp_factor};
+    jmp = INT_MAX / (total_budget / 10000); // 1000 more possible points than the total_budget.
+    return {1, INT_MAX, (jmp <= 0 ? 1 : jmp)};
 }
 
 
@@ -302,8 +400,10 @@ tuple<int, int, int> time_complexity::find_interval(function<void(int)> func){
 // Constructor
 time_complexity::time_complexity(int millisecond_total_budget, int millisecond_computation_budget, vector<function_type_t> fs){
     this->fs = fs;
-    this->total_budget = millisecond_total_budget;
-    this->computation_budget = millisecond_computation_budget;
+    this->total_budget = (long long) millisecond_total_budget * 1000000;
+    this->computation_budget = (long long) millisecond_computation_budget * 1000000;
+
+    this->auto_interval = true;
     this->verbose = false;
     this->show_gradient = false;
     this->show_possible_big_o = true;
@@ -314,16 +414,24 @@ time_complexity::time_complexity(int millisecond_total_budget, int millisecond_c
 
 // we need to find the intervals for the omega_test function.
 bool time_complexity::compute_complexity(string name, function<void(int)> func, string expected_complexity){
+    this->current_test_name = name;
+
     if(expected_complexity.size() != 0 && expected_complexity[0] != 'T' && expected_complexity[0] != 'O'){
         printf("Invalid time complexity guess: %s\n", expected_complexity.c_str());
         printf("Time complexity guess must start with either \'O\' or \'T\', representing Big-O and Big-Theta tests, respectively.\n");
     }
     
     int st, end, jmp;
-    tie(st, end, jmp) = find_interval(func);
+    if(this->auto_interval){
+        tie(st, end, jmp) = find_interval(func);
+    } else {
+        preprocessing_time = 0; // since we do not preprocess.
+        tie(st, end, jmp) = tuple<int,int,int>{1, INT_MAX, 1}; // a hard cap on the # of tests.
+    }
+
     char s[40];
     sprintf(s, "Interval: [%d, %d), Jump = %d", st, end, jmp);
-    if(verbose) cout << (string) s << "\n";
+    if(show_interval) cout << (string) s << "\n";
 
     // Generate table
     complexity_table_generator(func, st, end, jmp);
@@ -345,7 +453,7 @@ bool time_complexity::compute_complexity(string name, function<void(int)> func, 
         guess_name = stats[0].name; // take the lowest big O.
     }
 
-    sprintf(s, "[%.3fs, n = %lu]", (double) (total_time + preprocessing_time) / 1000, dds.size());
+    sprintf(s, "[%.3fs, n = %lu]", (double) (total_time + preprocessing_time) / 1000000 / 1000, dds.size());
 
     assert(expected_complexity == "" || expected_complexity.length() > 0);
 

@@ -1,0 +1,39 @@
+#! /bin/sh
+
+CLEAN=true
+TC_PATH="/Users/Siddhant/Desktop/Github/Time-Complexity-Tester"
+TEST_DIR_PATH="/Users/Siddhant/Desktop/Github/Time-Complexity-Tester/test"
+PY_LOAD_FILE_PATH="/Users/Siddhant/Desktop/Github/Time-Complexity-Tester/python-scripts/load_program.py"
+
+# Replace all spaces in the first argument with underscores (so that 
+# it is easily handled as a filename).
+TEST_NAME=$(echo $1 | sed "s/ /_/g")
+
+# Load the file using the following defaults:
+python3 $PY_LOAD_FILE_PATH -d $TEST_DIR_PATH "$TEST_NAME" $2 "$(cat $3)"
+
+# Run "make" to create an executable
+if [ $? -eq 0 ] 
+then
+    cd $TC_PATH; 
+    make TARGET=$TEST_NAME compile
+if [ $? -eq 0 ]
+then # if the make command works, then run the executable
+    unbuffer executables/$TEST_NAME.exe > $TC_PATH/output/output.txt; 
+    if [ $? -ne 0 ]
+    then
+        echo "Runtime error!";
+        exit 1;
+    fi
+    if $CLEAN 
+    then
+        rm -r $TEST_DIR_PATH/$TEST_NAME;
+        rm -f executables/$TEST_NAME.exe;
+    fi
+else # otherwise, print an error message
+    echo "Compiler error!";
+    exit 1;
+fi
+fi
+
+exit 0;

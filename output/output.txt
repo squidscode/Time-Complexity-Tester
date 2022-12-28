@@ -1,0 +1,10 @@
+Possible Big O functions: 
+  - O(sqrt(n)) : (a = 0.05358, error = 0.00177) 
+  - O(n) : (a = 0.00116, error = 0.00005) 
+  - O(n log n) : (a = 0.00027, error = 0.00001) 
+  - O(n^2) : (a = 0.00004, error = 0.00000) 
+  - O(n^3) : (a = -0.00000, error = 0.00000) 
+  - O(1.5^n) : (a = 0.00002, error = 0.00000) 
+  - O(2^n) : (a = 0.00000, error = 0.00000) 
+  - O(n^n) : (a = -0.00001, error = 0.00000) 
+[5.000s, n = 5897] String Append Test                       Guess: O(sqrt(n))             
